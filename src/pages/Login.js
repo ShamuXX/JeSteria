@@ -9,6 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import OutlinedInput from '@mui/material/OutlinedInput';
+import '../styles/LoginStyles.css';
 
 const Login = (props) => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -19,9 +20,16 @@ const Login = (props) => {
     event.preventDefault();
   };
   return (
-    <div>
-      <div className="containerInfo"></div>
-      <div className="containerInputs">
+    <div className="container">
+      <div className="container-info">
+        <h1>Login</h1>
+        <img src={require('../images/Img-graphics1.png')} className="img-graphic1" alt="Grafica 1"/>
+        <img src={require('../images/Img-graphics2.png')} className="img-graphic2" alt="Grafica 2"/>
+      </div>
+      <div className="container-inputs">
+      <img src={require('../images/Jesteria.png')} className="logo" alt="Logo"/>
+      <img src={require('../images/Flor.png')} className="img-flower" alt="Flower"/>
+      <img src={require('../images/Estrella.png')} className="img-star" alt="Star"/>
         <Box sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -49,7 +57,6 @@ const Login = (props) => {
         </FormControl>
         </Box>
       </div>
-      <h1>Login</h1>
     </div>
   );
 };

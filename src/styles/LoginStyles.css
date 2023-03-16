@@ -1,0 +1,57 @@
+.container{
+  overflow: 'hidden';
+  height: 100vh;
+  display: flex;
+  
+}
+
+.container-inputs{
+  background-color: #F0F0F0;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-info{
+  background-color: #3F3D56;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-graphics1, .img-graphics2 {
+  
+}
+
+.logo{
+
+}
+.img-flower{
+  max-width: 30%;
+  height: auto;
+  animation: girar-caer 7s linear infinite;
+}
+
+.img-star{
+  animation: caida 20s linear infinite;
+}
+
+@keyframes girar-caer {
+  from {
+    transform: translateY(-100%) rotate(0deg);
+  }
+  to {
+    transform: translateY(100%) rotate(360deg);
+  }
+}
+
+@keyframes caida {
+  from {
+    transform: translateY(-90vh);
+  }
+  to {
+    transform: translateY(90vh);
+  }
+}
