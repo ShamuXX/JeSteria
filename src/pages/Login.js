@@ -9,7 +9,13 @@ import IconButton from "@mui/material/IconButton";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import OutlinedInput from "@mui/material/OutlinedInput";
-import "../styles/LoginStyles.css";
+import * as styles from "../styles/LoginStyles.module.css"
+import graphics1 from "../images/Img-graphics1.png"
+import graphics2 from "../images/Img-graphics2.png"
+import logo from "../images/Jesteria.png"
+import flower from "../images/Flor.png"
+import star from "../images/Estrella.png"
+import Image from "next/image";
 
 const Login = (props) => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -20,45 +26,25 @@ const Login = (props) => {
     event.preventDefault();
   };
   return (
-    <div className="container">
-      <div className="container-section1">
+    <div className={styles.container}>
+      <div className={styles.containerSection1}>
         <h1>Login</h1>
-        <img
-          src={require("../images/Img-graphics1.png")}
-          className="img-graphic1"
-          alt="Grafica 1"
-        />
-        <img
-          src={require("../images/Img-graphics2.png")}
-          className="img-graphic2"
-          alt="Grafica 2"
-        />
+        <Image src={graphics1} className={styles.imgGraphics1} alt='Graphic1'/>
+        <Image src={graphics2} className={styles.imgGraphics2} alt='Graphic2'/>
       </div>
-      <div className="container-section2">
-        <div className="container-logo">
-          <img
-            src={require("../images/Jesteria.png")}
-            className="logo"
-            alt="Logo"
-          />
+      <div className={styles.containerSection2}>
+        <div className={styles.containerLogo}>
+          <Image src={logo} className={styles.logo} alt='Logo'/>
         </div>
-        <p className="txtWelcome">Bienvenido de nuevo</p>
-        <div className="container-img">
-            <img
-              src={require("../images/Flor.png")}
-              className="img-flower"
-              alt="Flower"
-            />
+        <p className={styles.txtWelcome}>Bienvenido de nuevo</p>
+        <div className={styles.containerImg}>          
+          <Image src={flower} className={styles.imgFlower} alt='Flower'/>
+          <div className={styles.containerStar}>
+            <Image src={star} className={styles.imgStar} alt='Star'/>
           </div>
-          <div className="container-star">
-            <img
-              src={require("../images/Estrella.png")}
-              className="img-star"
-              alt="Star"
-            />
         </div>
 
-        <div className="form-inputs">
+        <div className={styles.formInputs}>
           <Box
             sx={{
               display: "flex",
