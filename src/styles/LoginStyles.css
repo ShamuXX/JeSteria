@@ -1,32 +1,68 @@
-.container{
-  overflow: 'hidden';
-  height: 100vh;
-  display: flex;
-  
+*{
+  margin:0;
+  padding:0;
 }
 
-.container-inputs{
-  background-color: #F0F0F0;
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-}
+/*Primera Sección */  
 
-.container-info{
+.container-section1{
   background-color: #3F3D56;
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: center;
+  
 }
 
 .img-graphics1, .img-graphics2 {
   
 }
 
-.logo{
+/*Segunda Sección */  
 
+.container{
+  overflow: 'hidden';
+  height: 100vh;
+  display: flex;
+  margin:0;
+  padding:0;
+}
+
+.container-section2{
+  background-color: #F0F0F0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container-img{
+  position: absolute;
+}
+
+.container-logo{
+  position: relative;
+  min-height: 100px;
+  width: 35%;
+  height: 35%;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+.txtWelcome{
+  color: #817979;
+  font-size: 56px;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.logo{
+  height: 100%;
+  width: 100%;
 }
 .img-flower{
   max-width: 30%;
@@ -35,8 +71,9 @@
 }
 
 .img-star{
-  animation: caida 20s linear infinite;
+  animation: caida 5s linear infinite;
 }
+/*Animaciones */ 
 
 @keyframes girar-caer {
   from {
@@ -49,9 +86,14 @@
 
 @keyframes caida {
   from {
-    transform: translateY(-90vh);
+    transform: translateY(-55vh);
   }
   to {
-    transform: translateY(90vh);
+    transform: translateY(40vh);
   }
 }
+
+
+
+
+
