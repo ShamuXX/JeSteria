@@ -39,7 +39,10 @@
 }
 
 .container-img{
+  top: 0;
+  height: 100%;
   position: absolute;
+  overflow: hidden;
 }
 
 .container-logo{
@@ -67,7 +70,7 @@
 .img-flower{
   max-width: 30%;
   height: auto;
-  animation: girar-caer 7s linear infinite;
+  animation: girar-caer 2s linear infinite;
 }
 
 .img-star{
@@ -80,16 +83,16 @@
     transform: translateY(-100%) rotate(0deg);
   }
   to {
-    transform: translateY(100%) rotate(360deg);
+    transform: translateY(100vh) rotate(360deg);
   }
 }
 
 @keyframes caida {
   from {
-    transform: translateY(-55vh);
+    transform: translateY(0);
   }
   to {
-    transform: translateY(40vh);
+    transform: translateY(100%);
   }
 }
 

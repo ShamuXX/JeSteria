@@ -44,7 +44,6 @@ const Login = (props) => {
         </div>
         <p className="txtWelcome">Bienvenido de nuevo</p>
         <div className="container-img">
-          <div className="container-flower">
             <img
               src={require("../images/Flor.png")}
               className="img-flower"
@@ -57,7 +56,6 @@ const Login = (props) => {
               className="img-star"
               alt="Star"
             />
-          </div>
         </div>
 
         <div className="form-inputs">
