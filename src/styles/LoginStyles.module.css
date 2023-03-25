@@ -43,7 +43,6 @@
   position: absolute;
   overflow: hidden;
 }
-
 .containerLogo{
   position: relative;
   min-height: 100px;
@@ -59,12 +58,12 @@
   width: 60ch;
 }
 .forgetPassword{
-  margin-left: 18em;
+  margin-left: 18rem;
 }
 
 .txtWelcome{
   color: #3F3D56;
-  font-size: 3.5em;
+  font-size: 3.5rem;
   position: relative;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -78,12 +77,22 @@
 .imgFlower{
   max-width: 30%;
   height: auto;
-  animation: girar-caer 2s linear infinite;
+  animation:  falling 5s linear infinite;
+  opacity: 70%;
+}
+.imgFlower:nth-of-type(1){
+  animation-delay: 2s;
+}
+.imgFlower:nth-of-type(2){
+  animation-delay: 4s;
+}
+.imgFlower:nth-of-type(3){
+  animation-delay: 6s;
 }
 
 .imgStar{
   height: auto;
-  animation: caida 1s linear infinite;
+  animation: caida 2s linear infinite;
 }
 
 .iconGoogle{
@@ -100,17 +109,68 @@
     transform: translateY(100vh) rotate(360deg);
   }
 }
-
+@keyframes delay-animation {
+  100% {
+    animation-delay: 3s;
+  }
+}
 @keyframes caida {
   from {
     transform: translateY(-50vh);
   }
   to {
+    
     transform: translateY(100vh);
   }
 }
 
 
+/* ANIMATIONS */
+
+@keyframes falling {
+  0% {
+      -webkit-transform:
+          translateY(-100%)
+          rotate(0deg);
+      
+  }
+  
+  100% {
+      -webkit-transform:
+          translateY(100vh)
+          rotate(100deg);
+  }
+}
+
+@keyframes falling3 {
+   0% {
+      -webkit-transform:
+          translate3d(0,0,0)
+          rotate(-20deg);
+  }
+  
+  100% {
+      -webkit-transform:
+          translate3d(-230px,640px,0)
+          rotate(-70deg);
+      opacity: 0;
+  }
+}
+
+@keyframes falling2 {
+   0% {
+      -webkit-transform:
+          translate3d(0,0,0)
+          rotate(90deg);
+  }
+  
+  100% {
+      -webkit-transform:
+          translate3d(-400px,680px,0)
+          rotate(0deg);
+      opacity: 0;
+  }
+}
 
 
 
