@@ -23,6 +23,20 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Link from "@mui/material/Link";
 import IconGoogleCircle from "../icons/google";
 
+import Carousel from "react-material-ui-carousel";
+import Paper from "@mui/material/Paper";
+
+function Item(props) {
+  return (
+    <Paper>
+      <h2>{props.item.name}</h2>
+      <p>{props.item.description}</p>
+
+      <Button className="CheckButton">Check it out!</Button>
+    </Paper>
+  );
+}
+
 const Login = (props) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -31,12 +45,27 @@ const Login = (props) => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+  var items = [
+    {
+      name: "Random Name #1",
+      description: "Probably the most random thing you have ever seen!",
+    },
+    {
+      name: "Random Name #2",
+      description: "Hello World!",
+    },
+  ];
   return (
     <div className={styles.container}>
       <div className={styles.containerSection1}>
         <h1>Login</h1>
-        <Image src={graphics1} className={styles.imgGraphics1} alt="Graphic1" />
-        <Image src={graphics2} className={styles.imgGraphics2} alt="Graphic2" />
+        <Carousel>
+          {items.map((item, i) => (
+            <Item key={i} item={item} />
+          ))}
+        </Carousel>
+        {/*<Image src={graphics1} className={styles.imgGraphics1} alt="Graphic1" />
+        <Image src={graphics2} className={styles.imgGraphics2} alt="Graphic2" /> */}
       </div>
       <div className={styles.containerSection2}>
         <div className={styles.containerLogo}>

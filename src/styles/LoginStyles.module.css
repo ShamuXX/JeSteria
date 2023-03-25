@@ -45,9 +45,8 @@
 }
 .containerLogo{
   position: relative;
-  min-height: 100px;
-  width: 35%;
-  height: 35%;
+  width: 18rem;
+  height: 18rem;
   padding-right: 10px;
   margin-bottom: 20px;
 }
