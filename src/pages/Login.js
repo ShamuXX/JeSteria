@@ -44,14 +44,16 @@ const Login = (props) => {
         </div>
         <p className={styles.txtWelcome}>Bienvenido de nuevo</p>
         <div className={styles.containerImg}>
+          <Image src={star} className={styles.imgStar} alt="Star" />
           <Image src={flower} className={styles.imgFlower} alt="Flower" />
+          <Image src={star} className={styles.imgStar} alt="Star" />
           <Image src={flower} className={styles.imgFlower} alt="Flower" />
+          <Image src={star} className={styles.imgStar} alt="Star" />
           <Image src={flower} className={styles.imgFlower} alt="Flower" />
-          <div className={styles.containerStar}>
-            <Image src={star} className={styles.imgStar} alt="Star" />
-            <Image src={star} className={styles.imgStar} alt="Star" />
-            <Image src={star} className={styles.imgStar} alt="Star" />
-          </div>
+          <Image src={star} className={styles.imgStar} alt="Star" />
+          <Image src={flower} className={styles.imgFlower} alt="Flower" />
+          <Image src={star} className={styles.imgStar} alt="Star" />
+          <div className={styles.containerStar}></div>
         </div>
 
         <div className={styles.formInputs}>

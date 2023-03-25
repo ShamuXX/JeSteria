@@ -69,108 +69,88 @@
   font-weight: 400;
   margin-bottom: 50px;
 }
-
 .logo{
   height: 100%;
   width: 100%;
+  position: relative;
 }
 .imgFlower{
-  max-width: 30%;
   height: auto;
-  animation:  falling 5s linear infinite;
+  animation:  falling 5.5s linear infinite;
   opacity: 70%;
 }
-.imgFlower:nth-of-type(1){
-  animation-delay: 2s;
-}
 .imgFlower:nth-of-type(2){
-  animation-delay: 4s;
+  max-width: 20%;
+  animation-delay: -1.2s;
 }
-.imgFlower:nth-of-type(3){
-  animation-delay: 6s;
+.imgFlower:nth-of-type(4){
+  max-width: 30%;
+  animation-delay: -2.3s;
+}
+.imgFlower:nth-of-type(6){
+  max-width: 10%;
+  animation-delay: -4.4s;
+}
+.imgFlower:nth-of-type(8){
+  max-width: 25%;
+  animation-delay: -4.4s;
 }
 
 .imgStar{
+  width: 3%;
   height: auto;
-  animation: caida 2s linear infinite;
+  animation: fallingStar 2s linear infinite;
+}
+.imgStar:nth-of-type(1){
+  animation-delay: -0.1s;
+}
+.imgStar:nth-of-type(3){
+  animation-delay: -1.5s;
+}
+.imgStar:nth-of-type(5){
+  animation-delay: -2s;
+}
+.imgStar:nth-of-type(7){
+  animation-delay: -3s;
 }
 
 .iconGoogle{
   padding-top: 5px;
   margin-left: 0;
 }
-/*Animaciones */ 
-
-@keyframes girar-caer {
-  from {
-    transform: translateY(-100%) rotate(0deg);
-  }
-  to {
-    transform: translateY(100vh) rotate(360deg);
-  }
-}
-@keyframes delay-animation {
-  100% {
-    animation-delay: 3s;
-  }
-}
-@keyframes caida {
-  from {
-    transform: translateY(-50vh);
-  }
-  to {
-    
-    transform: translateY(100vh);
-  }
-}
-
 
 /* ANIMATIONS */
 
 @keyframes falling {
   0% {
       -webkit-transform:
-          translateY(-100%)
-          rotate(0deg);
-      
+          translateY(-300%)
+          rotate(0deg);   
   }
-  
   100% {
       -webkit-transform:
           translateY(100vh)
           rotate(100deg);
+          opacity: 20%;
   }
 }
 
-@keyframes falling3 {
-   0% {
+@keyframes fallingStar {
+  0% {
       -webkit-transform:
-          translate3d(0,0,0)
-          rotate(-20deg);
-  }
-  
-  100% {
-      -webkit-transform:
-          translate3d(-230px,640px,0)
-          rotate(-70deg);
-      opacity: 0;
-  }
-}
-
-@keyframes falling2 {
-   0% {
-      -webkit-transform:
-          translate3d(0,0,0)
-          rotate(90deg);
-  }
-  
-  100% {
-      -webkit-transform:
-          translate3d(-400px,680px,0)
+          translateY(-30vh)
           rotate(0deg);
-      opacity: 0;
   }
+  
+  100% {
+      -webkit-transform:
+          translateY(10vh)
+          rotate(100deg);
+          opacity: 0%;
+  }
+  
 }
+
 
 
 
