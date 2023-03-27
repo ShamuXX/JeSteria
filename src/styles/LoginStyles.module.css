@@ -73,7 +73,22 @@
 .forgetPassword{
   margin-left: 18rem;
 }
+.formControl{
+  margin: 1em;
+  width: 60ch;
+}
+.inputEmail{
+  margin: 1; 
+  width: 60ch; 
+  margin-bottom: 30px; 
+  height: 10%; 
+}
 
+.boxInput{
+  display: "flex";
+  flex-direction: "column";
+  align-items: "center";
+}
 .txtWelcome{
   color: #3F3D56;
   font-size: 3.5rem;
