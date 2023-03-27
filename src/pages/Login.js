@@ -88,7 +88,9 @@ const Login = (props) => {
           <Image src={star} className={styles.imgStar} alt="Star" />
           <div className={styles.containerStar}></div>
         </div>
-        <Inputs />
+        <div className={styles.boxInput}>
+          <Inputs />
+        </div>
         <div className={styles.containerLinks}>
           <FormControlLabel control={<Checkbox />} label="Recuérdame" />
           <div className={styles.forgetPassword}>

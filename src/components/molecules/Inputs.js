@@ -6,15 +6,9 @@ import InputPassword from "../atoms/InputPassword";
 
 export default function Inputs(props) {
   return (
-    <div className={styles.formInputs}>
-      <Box className={styles.boxInput}>
-        <TextField
-          id="email-user"
-          label="Email"
-          className={styles.inputEmail}
-        />
-        <InputPassword />
-      </Box>
-    </div>
+    <Box>
+      <TextField id="email-user" label="Email" className={styles.inputEmail} />
+      <InputPassword />
+    </Box>
   );
 }
