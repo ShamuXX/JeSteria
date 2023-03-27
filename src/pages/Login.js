@@ -13,6 +13,10 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import * as styles from "../styles/LoginStyles.module.css";
 import graphics1 from "../images/Img-graphics1.png";
 import graphics2 from "../images/Img-graphics2.png";
+import imgCarousel1 from "../images/imgSeccion1-1.png";
+import imgCarousel2 from "../images/imgSeccion1-2.png";
+import imgCarousel3 from "../images/imgSeccion1-3.png";
+import imgCarousel4 from "../images/imgSeccion1-4.png";
 import logo from "../images/Jesteria.png";
 import flower from "../images/Flor.png";
 import star from "../images/Estrella.png";
@@ -28,42 +32,51 @@ import Paper from "@mui/material/Paper";
 
 function Item(props) {
   return (
-    <Paper>
-      <h2>{props.item.name}</h2>
-      <p>{props.item.description}</p>
-
-      <Button className="CheckButton">Check it out!</Button>
+    <Paper className={styles.paper}>
+      <Image src={props.item.image} className={props.item.styles} alt="graphics1" />
+      <h2>{props.item.name}</h2> <br/>
+      {console.log(props.item.styles)}
     </Paper>
   );
 }
 
 const Login = (props) => {
   const [showPassword, setShowPassword] = React.useState(false);
-
   const handleClickShowPassword = () => setShowPassword((show) => !show);
-
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
   var items = [
     {
-      name: "Random Name #1",
-      description: "Probably the most random thing you have ever seen!",
+      name: "Organiza tus actividades diarias",
+      image: imgCarousel1,
+      styles: styles.imgCarousel1,
     },
     {
-      name: "Random Name #2",
-      description: "Hello World!",
+      name: "Lleva el control de tu vida",
+      image: imgCarousel2,
+      styles: styles.imgCarousel2,
+    },
+    {
+      name: "Lleva el control de tu vida",
+      image: imgCarousel3,
+      styles: styles.imgCarousel3,
+    },
+    {
+      name: "Lleva el control de tu vida",
+      image: imgCarousel4,
+      styles: styles.imgCarousel4,
     },
   ];
   return (
     <div className={styles.container}>
       <div className={styles.containerSection1}>
-        <h1>Login</h1>
-        <Carousel>
-          {items.map((item, i) => (
-            <Item key={i} item={item} />
-          ))}
-        </Carousel>
+          <Carousel sx={{width: '100%', height: '60vh', padding: '10%'}}>
+            {items.map((item, i) => (
+              <Item key={i} item={item} />
+            ))}
+          </Carousel>
+        
         {/*<Image src={graphics1} className={styles.imgGraphics1} alt="Graphic1" />
         <Image src={graphics2} className={styles.imgGraphics2} alt="Graphic2" /> */}
       </div>
