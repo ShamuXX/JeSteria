@@ -21,6 +21,7 @@ import Inputs from "../components/molecules/Inputs";
 
 import Carousel from "react-material-ui-carousel";
 import Paper from "@mui/material/Paper";
+import { useRouter } from "next/router";
 
 function Item(props) {
   return (
@@ -31,12 +32,16 @@ function Item(props) {
         alt="graphics1"
       />
       <h2>{props.item.name}</h2> <br />
-      {console.log(props.item.styles)}
     </Paper>
   );
 }
 
 const Login = (props) => {
+  const router = useRouter();
+  const handleClick = (e) => {
+    e.preventDefault();
+    router.push("/Home.js");
+  };
   var items = [
     {
       name: "Organiza tus actividades diarias",
@@ -94,7 +99,7 @@ const Login = (props) => {
         <div className={styles.containerLinks}>
           <FormControlLabel control={<Checkbox />} label="Recuérdame" />
           <div className={styles.forgetPassword}>
-            <Link href="#">Olvidé mi contraseña</Link>
+            <Link>Olvidé mi contraseña</Link>
           </div>
         </div>
         <div className="buttons-container">
@@ -120,6 +125,7 @@ const Login = (props) => {
                 background: "rgb(255, 255, 255)",
                 color: "rgb(63, 61, 86)",
               }}
+              onClick={() => router.push("/Home")}
             >
               <IconGoogleCircle />
               Iniciar Sesión con google
