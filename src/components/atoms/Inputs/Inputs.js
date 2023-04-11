@@ -11,9 +11,8 @@ export default function Inputs(props) {
         sx={{
           display: "flex",
           flexDirection: "column",
-          backgroundColor: "blue",
           minWidth: "50%",
-          padding: "5%",
+          paddingInline: "20%",
         }}
       >
         <TextField id="email-user" label="Email" className={styles.txtField} />

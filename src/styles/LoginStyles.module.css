@@ -1,4 +1,12 @@
 
+.container{
+  overflow: 'hidden';
+  height: 100vh;
+  display: flex;
+  margin:0;
+  padding:0;
+}
+
 /*Primera Sección */  
 
 .containerSection1{
@@ -33,13 +41,7 @@
 }
 /*Segunda Sección */  
 
-.container{
-  overflow: 'hidden';
-  height: 100vh;
-  display: flex;
-  margin:0;
-  padding:0;
-}
+
 
 .containerSection2{
   background-color: #F0F0F0;
@@ -51,6 +53,12 @@
   position: relative;
 }
 
+.buttonsContainer{
+  width: 100%;
+  height: 20%;
+  min-width: 70%;
+  background-color: aquamarine;
+}
 .containerImg{
   top: 0;
   height: 100%;
