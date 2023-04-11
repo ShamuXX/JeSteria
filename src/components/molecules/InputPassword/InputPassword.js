@@ -6,7 +6,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import FormControl from "@mui/material/FormControl";
-import * as styles from "../../styles/LoginStyles.module.css";
+import * as styles from "./InputPassword.module.css";
 
 export default function () {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -15,7 +15,7 @@ export default function () {
     event.preventDefault();
   };
   return (
-    <FormControl className={styles.formControl} variant="outlined">
+    <FormControl variant="outlined">
       <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
       <OutlinedInput
         id="outlined-adornment-password"

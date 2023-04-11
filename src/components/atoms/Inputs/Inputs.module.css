@@ -1,0 +1,11 @@
+.container {
+  width: 100vw;
+  height: 20vh;
+  background-color: red;
+  min-width: 70%;
+}
+
+.txtField{
+  font-size: 2rem;
+  margin-bottom: 2vh;
+}
