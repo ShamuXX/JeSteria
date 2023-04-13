@@ -8,6 +8,8 @@ import Checkbox from "@mui/material/Checkbox";
 import IconGoogleCircle from "../icons/google";
 import Button from "@mui/material/Button";
 import PageLayout from "../components/molecules/PageLayout";
+import Image from "next/image";
+import logo from '../images/Jesteria.png'
 
 const Login = (props) => {
   return (
@@ -17,16 +19,21 @@ const Login = (props) => {
         <h1 style={{ fontSize: "1.3rem" }}>hola</h1>
       </div>
       <div className={styles.containerSection2}>
+      <div className={styles.containerLogo}>
+          <Image src={logo} className={styles.logo} alt="Logo" />
+      </div>
+      <p className={styles.txtWelcome}>Bienvenido de nuevo</p>
         <Inputs />
         <div className={styles.containerLinks}>
           <div style={{ width: "50%"}}>
           <FormControlLabel control={<Checkbox />} label="Recuérdame" style={{height: '100%', marginLeft:'40%'}}/>
           </div>
           <div className={styles.forgetPassword}>
-          <Link href='/' style={{ marginRight: '40%', paddingTop: '2%', minWidth: '20%'}}>Olvidé mi contraseña</Link>
+          <Link href='/' style={{ marginRight: '40%', paddingTop: '2%', minWidth: '20%', fontSize: '1rem'}}>Olvidé mi contraseña</Link>
           </div>
         </div>
         <div className={styles.buttonsContainer}>
+        
           <Stack
             spacing={2}
             style={{
