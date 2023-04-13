@@ -2,18 +2,30 @@ import React from "react";
 import Inputs from "../components/atoms/Inputs/Inputs";
 import * as styles from "../styles/LoginStyles.module.css";
 import Stack from "@mui/material/Stack";
-
+import { FormControlLabel } from "@mui/material";
+import Link from "next/link";
+import Checkbox from "@mui/material/Checkbox";
 import IconGoogleCircle from "../icons/google";
 import Button from "@mui/material/Button";
+import PageLayout from "../components/molecules/PageLayout";
 
 const Login = (props) => {
   return (
+    <PageLayout title="Login">
     <div className={styles.container}>
       <div className={styles.containerSection1}>
         <h1 style={{ fontSize: "1.3rem" }}>hola</h1>
       </div>
       <div className={styles.containerSection2}>
         <Inputs />
+        <div className={styles.containerLinks}>
+          <div style={{ width: "50%"}}>
+          <FormControlLabel control={<Checkbox />} label="Recuérdame" style={{height: '100%', marginLeft:'40%'}}/>
+          </div>
+          <div className={styles.forgetPassword}>
+          <Link href='/' style={{ marginRight: '40%', paddingTop: '2%', minWidth: '20%'}}>Olvidé mi contraseña</Link>
+          </div>
+        </div>
         <div className={styles.buttonsContainer}>
           <Stack
             spacing={2}
@@ -47,6 +59,7 @@ const Login = (props) => {
         </div>
       </div>
     </div>
+    </PageLayout>
   );
 };
 
