@@ -1,0 +1,33 @@
+.container{
+    background-color: #3F3D56;
+    max-width: 25%;
+    border-radius: 2rem;
+    color: #fff;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 2rem;
+}
+.title{
+    font-size: 2rem;
+}
+
+.containerPercentages {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.containerCompleted{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+.containerRemaining{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    border-left: 0.2rem outset gray;
+}
