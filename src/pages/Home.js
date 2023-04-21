@@ -1,7 +1,6 @@
 import React from "react";
-import { Button } from "@mui/material";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import MenuButtonIcon from "../components/atoms/MenuButtonIcon/MenuButtonIcon";
 import * as styles from "../styles/Home.module.css";
 
 const Home = () => {
@@ -10,7 +9,7 @@ const Home = () => {
   return (
     <div className={styles.containerPage}>
       <div className={styles.container1}>
-        <h1>Hola</h1>
+        <MenuButtonIcon text="Home" icon="Home" />
       </div>
       <div className={styles.container2}>
         <div className={styles.childrenContainer1}>
