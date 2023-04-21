@@ -1,5 +1,6 @@
 import React from "react";
 import * as styles from "./Card.module.css";
+import Box from "../../atoms/Box/Box";
 
 export default function Card(){
   return(
@@ -15,6 +16,9 @@ export default function Card(){
 						<p>Restante</p>
 					</div>
       	</div>
+			<Box text={"Label 1"}/>
+			<Box text={"Label 2"}/>
+			<Box text={"Label 3"}/>
     </div>
     )
 }
