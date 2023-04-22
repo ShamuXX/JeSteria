@@ -8,6 +8,28 @@ import { useState } from "react";
 export default function Card(){
 	const [state, setSate] = useState(true);
   const onMorePress = () => setSate(!state);
+	const items = [
+		{
+			text: "Lavar a los perros",
+			hora: "5pm"
+		},
+		{
+			text: "Hacer la tarea de matemáticas",
+			hora: "6pm"
+		},
+		{
+			text: "Estudiar para el examen de inglés",
+			hora: "3pm"
+		},
+		{
+			text: "Hacer ejercicio",
+			hora: "10am"
+		},
+		{
+			text: "Sacar a pasear a los gatos",
+			hora: "12pm"
+		},
+	]
   return(
     <div className={styles.container} style={{maxWidth: state ? "25%" : "100%"}}>
       <p className={styles.title} style={{alignSelf: state ? "flex-start" : "center"}}>Actividades de hoy</p>
@@ -22,9 +44,11 @@ export default function Card(){
 					</div>
       	</div>
 			<div className={styles.containerTasks}>
-			<Box text={"Label 1"}/>
-			<Box text={"Label 2"}/>
-			<Box text={"Label 3"}/>
+				{state ? items.slice(0,3).map((item, i) => (
+              <Box key={i} item={item} text={item.text}/>
+            )): items.map((item, i) => (
+              <Box key={i} item={item} text={item.text}/>
+            ))}
 			</div>
 			<p className={styles.more} onClick={onMorePress}>Ver más...</p>
     </div>
