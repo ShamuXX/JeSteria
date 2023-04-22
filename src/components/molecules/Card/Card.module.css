@@ -8,10 +8,14 @@
     padding: 2rem;
     align-items: center;
     justify-content: center;
+    transition: 1s;
 }
 .title{
     font-size: 2rem;
     padding-bottom: 2rem;
+}
+.containerTitle{
+    transition: 1s;
 }
 
 .containerPercentages {
@@ -19,6 +23,7 @@
     align-items: center;
     justify-content: center;
     padding-bottom: 2rem;
+    transition: 1s;
 }
 .containerCompleted{
     display: flex;

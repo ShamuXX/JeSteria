@@ -32,7 +32,9 @@ export default function Card(){
 	]
   return(
     <div className={styles.container} style={{maxWidth: state ? "25%" : "100%"}}>
+			<div className={styles.containerTitle}>
       <p className={styles.title} style={{alignSelf: state ? "flex-start" : "center"}}>Actividades de hoy</p>
+			</div>
         <div className={styles.containerPercentages} style={{width: state ? "100%" : "50%"}}>
           <div className={styles.containerCompleted}> 
             <p className={styles.title}>85%</p>
@@ -50,7 +52,7 @@ export default function Card(){
               <Box key={i} item={item} text={item.text}/>
             ))}
 			</div>
-			<p className={styles.more} onClick={onMorePress}>Ver más...</p>
+			<p className={styles.more} onClick={onMorePress}>{state ? "Ver más..." : "Ver menos"}</p>
     </div>
     )
 }
