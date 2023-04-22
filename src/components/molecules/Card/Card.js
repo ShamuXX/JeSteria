@@ -1,10 +1,15 @@
 import React from "react";
 import * as styles from "./Card.module.css";
 import Box from "../../atoms/Box/Box";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Card(){
+	const [state, setSate] = useState(false);
+  const onMorePress = () => setSate(!state);
   return(
-    <div className={styles.container}>
+    <div className={styles.container} style={{maxWidth: state ? "25%" : "100%"}}>
       <p className={styles.title}>Actividades de hoy</p>
         <div className={styles.containerPercentages}>
           <div className={styles.containerCompleted}> 
@@ -19,6 +24,7 @@ export default function Card(){
 			<Box text={"Label 1"}/>
 			<Box text={"Label 2"}/>
 			<Box text={"Label 3"}/>
+			<p className={styles.more} onClick={onMorePress}>Ver más...</p>
     </div>
     )
 }

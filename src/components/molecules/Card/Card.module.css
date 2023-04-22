@@ -1,6 +1,5 @@
 .container{
     background-color: #3F3D56;
-    max-width: 25%;
     border-radius: 2rem;
     color: #fff;
     display: flex;
@@ -10,6 +9,7 @@
 }
 .title{
     font-size: 2rem;
+    padding-bottom: 2rem;
 }
 
 .containerPercentages {
@@ -17,6 +17,7 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    padding-bottom: 2rem;
 }
 .containerCompleted{
     display: flex;
@@ -30,4 +31,9 @@
     width: 50%;
     align-items: center;
     border-left: 0.2rem outset gray;
+}
+.more{
+    align-self: flex-end;
+    text-decoration: underline;
+    cursor: pointer;
 }
