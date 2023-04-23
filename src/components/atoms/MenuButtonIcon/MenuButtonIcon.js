@@ -31,15 +31,16 @@ const IconType = ({ type }) => {
 export default function MenuButtonIcon(props) {
   return (
     <Button
+      href="/"
       color="secondary"
       sx={{
         borderRadius: "10px",
         height: "8%",
-        width: "100%",
+        width: "85%",
         display: "flex",
         backgroundColor: "#D9D9D9",
 
-        margin: "10%",
+        margin: "8%",
       }}
     >
       <div className={styles.containerInfo}>
