@@ -1,9 +1,9 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import * as styles from "../styles/Home.module.css";
-import MenuBarOption from "../components/molecules/MenuBarOptions/MenuBarOptions";
 import Image from "next/image";
-import logo from "../images/LogoLetrasBlancas .png";
+import logo from "../images/LogoLetrasBlancas.png";
+import MenuBarOption from "../components/molecules/MenuBarOptions/MenuBarOptions";
 
 const Home = () => {
   const router = useRouter();

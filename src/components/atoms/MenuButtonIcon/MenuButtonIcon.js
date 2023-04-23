@@ -14,17 +14,19 @@ import { Button } from "@mui/material-next";
 const IconType = ({ type }) => {
   console.log(type);
   if (type == "Home") return <Home className={styles.icons} />;
-  if (type == "TrendingUp") return <TrendingUp className={styles.icons} />;
-  if (type == "AssignmentInd")
+  else if (type == "TrendingUp") return <TrendingUp className={styles.icons} />;
+  else if (type == "AssignmentInd")
     return <AssignmentInd className={styles.icons} />;
-  if (type == "Leaderboard") return <Leaderboard className={styles.icons} />;
-  if (type == "AutoAwesomeMotion")
+  else if (type == "Leaderboard")
+    return <Leaderboard className={styles.icons} />;
+  else if (type == "AutoAwesomeMotion")
     return <AutoAwesomeMotion className={styles.icons} />;
-  if (type == "ManageAccounts")
+  else if (type == "ManageAccounts")
     return <ManageAccounts className={styles.icons} />;
-  if (type == "NorthEast") return <NorthEast className={styles.icons} />;
-  if (type == "Logout") return <Logout className={styles.icons} />;
+  else if (type == "NorthEast") return <NorthEast className={styles.icons} />;
+  else if (type == "Logout") return <Logout className={styles.icons} />;
   else {
+    console.log("naa");
   }
 };
 
