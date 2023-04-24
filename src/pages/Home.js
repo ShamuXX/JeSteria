@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/navigation";
+import Card from "../components/molecules/Card/Card";
 import * as styles from "../styles/Home.module.css";
 import Image from "next/image";
 import logo from "../images/LogoLetrasBlancas.png";
@@ -21,6 +22,7 @@ const Home = () => {
       <div className={styles.container2}>
         <div className={styles.childrenContainer1}>
           <h1>adiós</h1>
+          <Card />
         </div>
       </div>
     </div>

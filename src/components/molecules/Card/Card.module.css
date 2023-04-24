@@ -1,0 +1,51 @@
+.container{
+    background-color: #3F3D56;
+    border-radius: 2rem;
+    color: #fff;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+.title{
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+.containerTitle{
+    transition: 1s;
+}
+
+.containerPercentages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+    transition: 1s;
+}
+.containerCompleted{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+}
+.containerRemaining{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    border-left: 0.2rem outset gray;
+}
+.containerTasks{
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+.more{
+    align-self: flex-end;
+    text-decoration: underline;
+    cursor: pointer;
+}

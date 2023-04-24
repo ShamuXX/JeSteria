@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Index() {
   return (
     <div>
-      <Link href="/Login">adsd</Link>
+      <Link href="/Home">adsd</Link>
     </div>
   );
 }
