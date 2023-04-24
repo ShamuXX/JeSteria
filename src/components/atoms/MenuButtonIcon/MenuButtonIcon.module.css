@@ -1,0 +1,23 @@
+.container{
+  display: flex;
+  flex: auto;
+  width: 100%;
+  border-radius: 0;
+  
+}
+
+.text {
+  font-size: 1.3rem;
+  margin-left: 10px;
+}
+
+.icons{
+  margin-top: 2px;
+}
+
+.containerInfo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 10%;
+}
