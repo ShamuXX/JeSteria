@@ -15,6 +15,6 @@ export default function PercentageCard(){
           </svg>
         </div>
       </div>
-   </div>      
+   </div>        
 	)
 }

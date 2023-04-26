@@ -1,0 +1,19 @@
+.containerButton{
+    background-color: #3F3D56;
+    width: 70%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    margin-top: 2rem;
+}
+.containerButton:hover{
+    background-color: #7975A1;
+}
+.title {
+    margin-inline: 6rem;
+    margin-block: 2rem;
+    color: white;
+    text-align: center;
+}
