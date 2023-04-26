@@ -1,0 +1,32 @@
+.container{
+  display: grid;
+}
+
+.containerBase, .containerBack1, .containerBack2 {
+    width: 20rem;
+    height: 25rem;
+    grid-area: overlap;
+    border-radius: 2rem;
+}
+.containerBase{
+    background-color: #531AA7;
+    z-index: 3;
+}
+.containerBack1{
+    background-color: #8E79FF;
+    transform: rotate(10deg);
+    margin-left: 2rem;
+    z-index: 2;
+}
+.containerBack2{
+    background-color: #BCBCBC;
+    transform: rotate(20deg);
+    margin-left: 3rem;
+    z-index: 1;
+
+}
+
+.title {
+    margin: 2rem;
+    color: white;
+}
