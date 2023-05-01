@@ -5,7 +5,7 @@ import * as styles from "../styles/Home.module.css";
 import Image from "next/image";
 import logo from "../images/LogoLetrasBlancas.png";
 import MenuBarOption from "../components/molecules/MenuBarOptions/MenuBarOptions";
-
+import ProgressionActivities from "../components/atoms/ProgressionActivities/ProgressionActivities";
 const Home = () => {
   const router = useRouter();
 
@@ -23,6 +23,7 @@ const Home = () => {
         <div className={styles.childrenContainer1}>
           <h1>adiós</h1>
           <Card />
+          <ProgressionActivities text="Hoy" number="2" />
         </div>
       </div>
     </div>
