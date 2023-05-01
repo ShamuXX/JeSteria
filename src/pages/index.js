@@ -8,6 +8,8 @@ import PercentageCard from "../components/molecules/PercentageCard/PercentageCar
 import PageLayout from "../components/molecules/PageLayout";
 import Card from "../components/molecules/Card/Card";
 import ButtonSchedule from "../components/atoms/ButtonSchedule/ButtonSchedule";
+import Calendar from "../components/molecules/CalendarComponent/Calendar";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +20,7 @@ export default function Index() {
       <div>hola</div>
       <div style={{display:"flex"}}>
         <Card />
+        <Calendar />
         <div>
         <PercentageCard />
         <ButtonSchedule />
