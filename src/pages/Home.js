@@ -29,7 +29,7 @@ const Home = () => {
             text="Hoy"
             number="2"
             iconVisible={true}
-            styleCard={true}
+            styleCard={false}
           />
         </div>
       </div>
