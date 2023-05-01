@@ -2,7 +2,8 @@
   align-items: center;
   text-align: center;
   width: 9%;
-  height: 15%;
+  height: 65%;
+  margin-left: 4%;
   background-image: url(../../../images/progressionCardColor.png), linear-gradient(to bottom, #896E9E, #5c597d);
   background-size: 170px;
   background-repeat: no-repeat;
@@ -14,7 +15,8 @@
   align-items: center;
   text-align: center;
   width: 9%;
-  height: 15%;
+  height: 65%;
+  margin-left: 4%;
   background-image: url(../../../images/progressionCardColor2.png), linear-gradient(to bottom, #FEC48E, #CD9E72);
   background-size: 170px;
   background-repeat: no-repeat;
@@ -37,5 +39,4 @@
   color: #A5CCA4;
   position: absolute;
   margin-left: 55px;
-  
 }

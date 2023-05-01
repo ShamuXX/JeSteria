@@ -25,12 +25,35 @@ const Home = () => {
         <div className={styles.childrenContainer1}>
           <h1>adiós</h1>
           <Card />
-          <ProgressionActivities
-            text="Hoy"
-            number="2"
-            iconVisible={true}
-            styleCard={false}
-          />
+          <div className={styles.containerGruop}>
+            <div className={styles.containerProgessionAct}>
+              <p className={styles.textAct}>Actividades Completadas</p>
+              <ProgressionActivities
+                text="Hoy"
+                number="2"
+                iconVisible={true}
+                styleCard={false}
+              />
+              <ProgressionActivities
+                text="Semana"
+                number="2"
+                iconVisible={false}
+                styleCard={false}
+              />
+              <ProgressionActivities
+                text="Mes"
+                number="2"
+                iconVisible={true}
+                styleCard={false}
+              />
+              <ProgressionActivities
+                text="Total"
+                number="2"
+                iconVisible={false}
+                styleCard={true}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
