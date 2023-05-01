@@ -4,16 +4,31 @@ import { Inter } from "next/font/google";
 import styles from "../styles/Home.module.css";
 import Login from "./Login";
 import Link from "next/link";
-import Calendar from "../components/molecules/CalendarComponent/Calendar";
+import PercentageCard from "../components/molecules/PercentageCard/PercentageCard";
 import PageLayout from "../components/molecules/PageLayout";
+import Card from "../components/molecules/Card/Card";
+import ButtonSchedule from "../components/atoms/ButtonSchedule/ButtonSchedule";
+import Calendar from "../components/molecules/CalendarComponent/Calendar";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Index() {
   return (
-    <PageLayout >
+    <PageLayout>
       <Link href="/Home">adsd</Link>
-      <Calendar />
-      </PageLayout>
+      <div>hola</div>
+      <div style={{display:"flex"}}>
+        <Card />
+        <Calendar />
+        <div>
+        <PercentageCard />
+        <ButtonSchedule />
+        </div>
+        
+      </div>
+      
+      
+    </PageLayout>
   );
 }

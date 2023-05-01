@@ -1,0 +1,74 @@
+.container{
+    width: 18%;
+    height: 80%;
+    display: grid;
+}
+
+.containerBase, .containerBack1, .containerBack2 {
+    grid-area: overlap;
+    border-radius: 2rem;
+}
+.containerBack1, .containerBack2{
+    width: 90%;
+    height: 90%;
+    margin-bottom: 5rem;
+}
+.containerBase{
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(#531AA7, #7863A4);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.containerBack1{
+    background:linear-gradient(#8E79FF, #AA9DF9);
+    opacity: 0.7;
+    transform: rotate(10deg);
+    margin-left: 17%;
+    z-index: 2;
+}
+.containerBack2{
+    background:linear-gradient(#BCBCBC, #230AC6);
+    transform: rotate(20deg);
+    margin-left: 22%;
+    z-index: 1;
+
+}
+.containerCircle{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.containerButton{
+    background-color: #3F3D56;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+}
+.title {
+    margin: 2rem;
+    color: white;
+    text-align: center;
+}
+.percentage{
+    stroke: #A00EE4;
+    stroke-width: .4%;
+}
+.circle{
+   fill: white;
+   display: flex;
+   stroke: #FDC2BE;
+   stroke-width: 8%;
+   stroke-linecap: round;
+   transform: rotate(-90deg);
+   transform-origin: 50%;
+   stroke-dasharray: 80 100;
+}
