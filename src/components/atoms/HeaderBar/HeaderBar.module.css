@@ -1,0 +1,30 @@
+
+
+.container{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  margin-left: 5%;
+  width: 90%;
+  height: 15%;
+ 
+}
+.profileImage{
+  border-radius: 50%;
+}
+
+.containerImage{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  height: 100%;
+  right: 0;
+  align-items: center;
+}
+
+.header{
+  font-size: 2.1rem;
+  color: #353535;
+  
+}

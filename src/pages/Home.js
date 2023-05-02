@@ -5,8 +5,11 @@ import * as styles from "../styles/Home.module.css";
 import Image from "next/image";
 import logo from "../images/LogoLetrasBlancas.png";
 import MenuBarOption from "../components/molecules/MenuBarOptions/MenuBarOptions";
-import ProgressionActivities from "../components/atoms/ProgressionActivities/ProgressionActivities";
+import HeaderBar from "../components/atoms/HeaderBar/HeaderBar";
+import imgProfile from "../images/profile.png";
 import { styled } from "@mui/material/styles";
+import ProgressionActivities from "../components/atoms/ProgressionActivities/ProgressionActivities";
+
 
 const Home = () => {
   const router = useRouter();
@@ -23,7 +26,13 @@ const Home = () => {
       </div>
       <div className={styles.container2}>
         <div className={styles.childrenContainer1}>
-          <h1>adiós</h1>
+          <HeaderBar
+            title="Home"
+            description="aplication home"
+            header="Home"
+            href="/"
+            imgProfile={imgProfile}
+          />
           <Card />
           <div className={styles.containerGruop}>
             <div className={styles.containerProgessionAct}>
