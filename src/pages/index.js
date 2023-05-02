@@ -15,20 +15,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Index() {
   return (
-    <PageLayout>
-      <Link href="/Home">adsd</Link>
-      <div>hola</div>
-      <div style={{display:"flex"}}>
-        <Card />
-        <Calendar />
-        <div>
-        <PercentageCard />
-        <ButtonSchedule />
-        </div>
-        
-      </div>
-      
-      
-    </PageLayout>
+    <div>
+      <Link href="/Login">adsd</Link>
+    </div>
   );
 }
