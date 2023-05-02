@@ -7,6 +7,9 @@ import logo from "../images/LogoLetrasBlancas.png";
 import MenuBarOption from "../components/molecules/MenuBarOptions/MenuBarOptions";
 import HeaderBar from "../components/atoms/HeaderBar/HeaderBar";
 import imgProfile from "../images/profile.png";
+import { styled } from "@mui/material/styles";
+import ProgressionActivities from "../components/atoms/ProgressionActivities/ProgressionActivities";
+
 
 const Home = () => {
   const router = useRouter();
@@ -31,6 +34,35 @@ const Home = () => {
             imgProfile={imgProfile}
           />
           <Card />
+          <div className={styles.containerGruop}>
+            <div className={styles.containerProgessionAct}>
+              <p className={styles.textAct}>Actividades Completadas</p>
+              <ProgressionActivities
+                text="Hoy"
+                number="2"
+                iconVisible={true}
+                styleCard={false}
+              />
+              <ProgressionActivities
+                text="Semana"
+                number="2"
+                iconVisible={false}
+                styleCard={false}
+              />
+              <ProgressionActivities
+                text="Mes"
+                number="2"
+                iconVisible={true}
+                styleCard={false}
+              />
+              <ProgressionActivities
+                text="Total"
+                number="2"
+                iconVisible={false}
+                styleCard={true}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
