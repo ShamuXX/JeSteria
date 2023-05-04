@@ -15,12 +15,49 @@ import Carousel from "react-material-ui-carousel";
 import { useRouter } from "next/router";
 import ItemCarousel from "../components/molecules/ItemCarousel/ItemCarousel";
 import items from "../utils/itemCarousel.js";
+import { useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../../src/firebase/firebaseApp";
 
 const Login = (props) => {
-  const router = useRouter();
-  const handleClick = (e) => {
-    e.preventDefault();
-    router.push("/Home.js");
+  const [credentials, setCredencials] = useState({
+    email: "samuel@gmail.com",
+    password: "samuel12345",
+  });
+
+  const { push } = useRouter();
+  const changeUser = (e) => {
+    setCredencials({
+      ...credentials,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const loginUser = async () => {
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password
+      );
+      push("/Home");
+    } catch (error) {
+      console.log("user not registered");
+    }
+  };
+  const registerUser = async () => {
+    try {
+      await createUserWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password
+      );
+      push("/Home");
+    } catch (error) {
+      console.log("error with register user");
+    }
   };
   return (
     <PageLayout title="Login">
@@ -75,6 +112,7 @@ const Login = (props) => {
                 variant="contained"
                 color="secondary"
                 style={{ height: "100%", background: "rgb(63, 61, 86)" }}
+                onClick={loginUser}
               >
                 Iniciar Sesión
               </Button>
@@ -85,7 +123,7 @@ const Login = (props) => {
                   background: "rgb(255, 255, 255)",
                   color: "rgb(63, 61, 86)",
                 }}
-                onClick={() => router.push("/Home")}
+                onClick={registerUser}
               >
                 <IconGoogleCircle />
                 Iniciar Sesión con google
