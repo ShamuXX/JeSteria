@@ -9,12 +9,19 @@
 
 /*Primera Sección */  
 
-.containerSection1{
-  background-color: #3F3D56;
+.containerSection1,.containerSection2{
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: center;
+}
+.containerSection1{
+  background-color: #3F3D56;
+}
+.containerSection2{
+  background-color: #F0F0F0;
+  flex-direction: column;
+  position: relative;
 }
 
 .imgCarousel1, .imgCarousel2, .imgCarousel3, .imgCarousel4 {
@@ -26,45 +33,12 @@
 }
 /*Segunda Sección */  
 
-.containerSection2{
-  background-color: #F0F0F0;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.buttonsContainer{
-  width: 100%;
-  height: 20%;
-  min-width: 70%;
-}
 
 .containerLogo{
   position: relative;
-  width: 18rem;
-  height: 18rem;
-  padding-right: 10px;
-  margin-bottom: 20px;
-}
-.containerLinks{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 5%;
-  min-Width: 50%;
-}
-
-
-.forgetPassword{
-  display: flex;
-  justify-content: flex-end;
-  width: 50%;
-  height: 100%;
-  
-
+  width: 15rem;
+  height: 15rem;
+  margin-bottom: 1rem;
 }
 .formControl{
   margin-bottom: 1rem;
@@ -86,7 +60,7 @@
   position: relative;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  margin-bottom: 50px;
+  margin-bottom: 2rem;
 }
 .logo{
   height: 100%;

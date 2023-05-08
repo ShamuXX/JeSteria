@@ -18,12 +18,15 @@ export default function Inputs(props) {
           paddingInline: "20%",
         }}
       >
-        <TextField
+        <div style={{paddingBottom: "1rem"}}>
+          <TextField
           id="email-user"
           label="Email"
           className={styles.txtField}
           onChange={(e) => setEmail(e.target.value)}
         />
+        </div>
+
         <InputPassword />
       </Box>
     </div>
