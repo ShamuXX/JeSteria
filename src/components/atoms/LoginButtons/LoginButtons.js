@@ -45,14 +45,14 @@ export default function LoginButtons(){
               <Button
                 variant="contained"
                 color="secondary"
-                style={{ height: "100%", background: "rgb(63, 61, 86)", marginTop: "2rem"}}
+                style={{ height: "3rem", background: "rgb(63, 61, 86)", marginTop: "2rem"}}
               >
                 Iniciar Sesión
               </Button>
               <Button
                 variant="contained"
                 style={{
-                  height: "100%",
+                  height: "3rem",
                   background: "rgb(255, 255, 255)",
                   color: "rgb(63, 61, 86)",
                 }}

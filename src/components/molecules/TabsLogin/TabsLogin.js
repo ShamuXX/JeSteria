@@ -5,6 +5,10 @@ import Box from '@mui/material/Box';
 import PropTypes from 'prop-types';
 import Inputs from "../../atoms/Inputs/Inputs";
 import LoginButtons from "../../atoms/LoginButtons/LoginButtons";
+import { TextField } from "@mui/material";
+import * as styles from "./TabsLogin.module.css";
+import InputPassword from "../InputPassword/InputPassword";
+import Button from "@mui/material/Button";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -58,7 +62,29 @@ export default function TabsLogin(){
         <LoginButtons />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <div className={styles.container}>
+          <Box sx={{
+          display: "flex",
+          flexDirection: "column",
+          minWidth: "50%",
+          paddingInline: "20%",
+          }}>
+            <div className={styles.txtFieldContainer}>
+              <TextField id="name-user" label="Usuario" className={styles.txtField} />
+            </div>
+            <div className={styles.txtFieldContainer}>
+              <TextField id="email-user" label="Email" className={styles.txtField} />
+            </div>
+            <InputPassword />
+            <Button
+                variant="contained"
+                color="secondary"
+                style={{ height: "3rem", background: "rgb(63, 61, 86)", marginTop: "2rem"}}
+              >
+                Registrarse
+              </Button>
+          </Box>
+        </div>
       </TabPanel>
     </Box>
     )

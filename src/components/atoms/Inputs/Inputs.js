@@ -15,7 +15,9 @@ export default function Inputs(props) {
           paddingInline: "20%",
         }}
       >
-        <TextField id="email-user" label="Email" className={styles.txtField} />
+        <div style={{paddingBottom: "1rem"}}>
+          <TextField id="email-user" label="Email" className={styles.txtField} />
+        </div>
         <InputPassword />
       </Box>
     </div>
