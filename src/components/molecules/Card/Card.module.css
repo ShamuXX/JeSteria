@@ -9,6 +9,8 @@
     align-items: center;
     justify-content: center;
     transition: 1s;
+    min-width: 30%;
+    margin-inline: 1rem;
 }
 .title{
     font-size: 2rem;

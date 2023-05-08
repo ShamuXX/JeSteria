@@ -9,12 +9,16 @@ import HeaderBar from "../components/atoms/HeaderBar/HeaderBar";
 import imgProfile from "../images/profile.png";
 import { styled } from "@mui/material/styles";
 import ProgressionActivities from "../components/atoms/ProgressionActivities/ProgressionActivities";
-
+import Calendar from "../components/molecules/CalendarComponent/Calendar";
+import PercentageCard from "../components/molecules/PercentageCard/PercentageCard";
+import ButtonSchedule from "../components/atoms/ButtonSchedule/ButtonSchedule";
+import PageLayout from "../components/molecules/PageLayout";
 
 const Home = () => {
   const router = useRouter();
 
   return (
+    <PageLayout>
     <div className={styles.containerPage}>
       <div className={styles.container1}>
         <div className={styles.containerImageMenu}>
@@ -33,7 +37,6 @@ const Home = () => {
             href="/"
             imgProfile={imgProfile}
           />
-          <Card />
           <div className={styles.containerGruop}>
             <div className={styles.containerProgessionAct}>
               <p className={styles.textAct}>Actividades Completadas</p>
@@ -63,9 +66,18 @@ const Home = () => {
               />
             </div>
           </div>
+          <div style={{display:"flex", width: "100%"}}>
+            <Card />
+            <Calendar />
+            <div>
+              <PercentageCard />
+              <ButtonSchedule />
+            </div>        
+          </div>
         </div>
       </div>
     </div>
+    </PageLayout>
   );
 };
 
