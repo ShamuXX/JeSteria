@@ -9,6 +9,9 @@ import { TextField } from "@mui/material";
 import * as styles from "./TabsLogin.module.css";
 import InputPassword from "../InputPassword/InputPassword";
 import Button from "@mui/material/Button";
+import { FormControlLabel } from "@mui/material";
+import Checkbox from "@mui/material/Checkbox";
+import { useState } from "react";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -48,6 +51,8 @@ export default function TabsLogin(){
     const handleChange = (event, newValue) => {
         setValue(newValue);
   };
+  const [state, setSate] = useState(true);
+  const checked = () => setSate(!state);
 
     return(
       <Box sx={{ width: '100%' }}>
@@ -76,10 +81,20 @@ export default function TabsLogin(){
               <TextField id="email-user" label="Email" className={styles.txtField} />
             </div>
             <InputPassword />
+            <FormControlLabel
+                control={<Checkbox onChange={checked}/>}
+                label="Acepto los términos y condiciones"
+                style={{ height: "100%" }}
+              />
             <Button
                 variant="contained"
                 color="secondary"
-                style={{ height: "3rem", background: "rgb(63, 61, 86)", marginTop: "2rem"}}
+                disabled={state}
+                sx={{ height: "3rem", background: "rgb(63, 61, 86)", marginTop: "2rem", 
+                "&.Mui-disabled": {
+                  background: "#878787",
+                  color: "#c0c0c0"
+                }}}
               >
                 Registrarse
               </Button>
