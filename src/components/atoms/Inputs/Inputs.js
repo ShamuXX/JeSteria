@@ -3,8 +3,11 @@ import Box from "@mui/material/Box";
 import { TextField } from "@mui/material";
 import * as styles from "./Inputs.module.css";
 import InputPassword from "../../molecules/InputPassword/InputPassword";
+import { useState } from "react";
 
 export default function Inputs(props) {
+  const [email, setEmail] = useState("");
+
   return (
     <div className={styles.container}>
       <Box
@@ -16,8 +19,14 @@ export default function Inputs(props) {
         }}
       >
         <div style={{paddingBottom: "1rem"}}>
-          <TextField id="email-user" label="Email" className={styles.txtField} />
+          <TextField
+          id="email-user"
+          label="Email"
+          className={styles.txtField}
+          onChange={(e) => setEmail(e.target.value)}
+        />
         </div>
+
         <InputPassword />
       </Box>
     </div>
