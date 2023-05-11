@@ -9,10 +9,9 @@ import {
   Logout,
 } from "@mui/icons-material";
 import * as styles from "./MenuButtonIcon.module.css";
-import { Button } from "@mui/material-next";
+import { useRouter } from "next/router";
 
 const IconType = ({ type }) => {
-  console.log(type);
   if (type == "Home") return <Home className={styles.icons} />;
   else if (type == "TrendingUp") return <TrendingUp className={styles.icons} />;
   else if (type == "AssignmentInd")
@@ -31,24 +30,16 @@ const IconType = ({ type }) => {
 };
 
 export default function MenuButtonIcon(props) {
+  const { push } = useRouter();
+  function onHandleClick() {
+    push(props.navigate);
+  }
   return (
-    <Button
-      href="/"
-      color="secondary"
-      sx={{
-        borderRadius: "10px",
-        height: "8%",
-        width: "85%",
-        display: "flex",
-        backgroundColor: "#D9D9D9",
-
-        margin: "8%",
-      }}
-    >
+    <div className={styles.buttonContainer} onClick={onHandleClick}>
       <div className={styles.containerInfo}>
         <IconType type={props.icon} />
         <p className={styles.text}>{props.text}</p>
       </div>
-    </Button>
+    </div>
   );
 }
