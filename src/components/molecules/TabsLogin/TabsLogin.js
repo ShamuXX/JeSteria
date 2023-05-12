@@ -11,6 +11,7 @@ import InputPassword from "../InputPassword/InputPassword";
 import Button from "@mui/material/Button";
 import { FormControlLabel } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
+import Alert from '@mui/material/Alert';
 import { useRouter } from "next/router";
 import { useState } from "react";
 import {
@@ -59,8 +60,9 @@ export default function TabsLogin(){
   };
   const [state, setSate] = useState(true);
   const checked = () => setSate(!state);
-
- 
+  const [alertlogin, setAlertlogin] = useState(false);
+  const [alertsignup, setAlertsignup] = useState(false);
+  
   const [credentials, setCredencials] = useState({
     email: "samuel@gmail.com",
     password: "samuel12345",
@@ -80,11 +82,9 @@ export default function TabsLogin(){
         credentials.email,
         credentials.password
       );
-      console.log(credentials);
       push("/Home");
     } catch (error) {
-      console.log("user not registered");
-      console.log(credentials);
+      setAlertlogin(!alertlogin);
     }
   };
   const registerUser = async () => {
@@ -96,8 +96,7 @@ export default function TabsLogin(){
       );
       push("/Home");
     } catch (error) {
-      console.log("error with register user");
-      console.log(credentials);
+      setAlertsignup(!alertsignup);
     }
   };
     return(
@@ -109,10 +108,12 @@ export default function TabsLogin(){
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
+        {alertlogin ? <Alert severity="error">Usuario o contraseña incorrectos</Alert> : ""}
         <Inputs change={changeUser}/>
         <LoginButtons click={loginUser}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
+      {alertsignup ? <Alert severity="error">Rellena los campos con información válida</Alert> : ""}
         <div className={styles.container}>
           <Box sx={{
           display: "flex",
