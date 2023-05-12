@@ -5,7 +5,7 @@ import * as styles from "./Inputs.module.css";
 import InputPassword from "../../molecules/InputPassword/InputPassword";
 import { useState } from "react";
 
-export default function Inputs(props) {
+export default function Inputs({change}) {
   const [email, setEmail] = useState("");
 
   return (
@@ -20,14 +20,15 @@ export default function Inputs(props) {
       >
         <div style={{paddingBottom: "1rem"}}>
           <TextField
-          id="email-user"
+          id="email"
+          name="email"
           label="Email"
           className={styles.txtField}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={change}
         />
         </div>
 
-        <InputPassword />
+        <InputPassword change={change}/>
       </Box>
     </div>
   );

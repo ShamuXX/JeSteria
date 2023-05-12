@@ -7,41 +7,9 @@ import IconGoogleCircle from "../../../icons/google";
 import Button from "@mui/material/Button";
 import * as styles from "./LoginButtons.module.css";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { auth } from "../../../firebase/firebaseApp";
 
-export default function LoginButtons() {
+export default function LoginButtons({click}) {
   const router = useRouter();
-
-  const [credentials, setCredencials] = useState({
-    email: "samuel@gmail.com",
-    password: "samuel12345",
-  });
-
-  const { push } = useRouter();
-  const changeUser = (e) => {
-    setCredencials({
-      ...credentials,
-      [e.target.name]: e.target.value,
-    });
-  };
-  const loginUser = async () => {
-    try {
-      await signInWithEmailAndPassword(
-        auth,
-        credentials.email,
-        credentials.password
-      );
-      push("/Home");
-      console.log(credentials.email);
-    } catch (error) {
-      console.log("user not registered");
-    }
-  };
 
   return (
     <div>
@@ -85,7 +53,7 @@ export default function LoginButtons() {
               background: "rgb(63, 61, 86)",
               marginTop: "2rem",
             }}
-            onClick={loginUser}
+            onClick={click}
           >
             Iniciar Sesión
           </Button>

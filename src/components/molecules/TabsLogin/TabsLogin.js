@@ -80,6 +80,7 @@ export default function TabsLogin(){
         credentials.email,
         credentials.password
       );
+      console.log(credentials);
       push("/Home");
     } catch (error) {
       console.log("user not registered");
@@ -108,8 +109,8 @@ export default function TabsLogin(){
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Inputs />
-        <LoginButtons />
+        <Inputs change={changeUser}/>
+        <LoginButtons click={loginUser}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <div className={styles.container}>
