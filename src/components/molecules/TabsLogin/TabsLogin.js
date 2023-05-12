@@ -11,7 +11,13 @@ import InputPassword from "../InputPassword/InputPassword";
 import Button from "@mui/material/Button";
 import { FormControlLabel } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
+import { useRouter } from "next/router";
 import { useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../../../firebase/firebaseApp";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -54,6 +60,45 @@ export default function TabsLogin(){
   const [state, setSate] = useState(true);
   const checked = () => setSate(!state);
 
+ 
+  const [credentials, setCredencials] = useState({
+    email: "samuel@gmail.com",
+    password: "samuel12345",
+  });
+
+  const { push } = useRouter();
+  const changeUser = (e) => {
+    setCredencials({
+      ...credentials,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const loginUser = async () => {
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password
+      );
+      push("/Home");
+    } catch (error) {
+      console.log("user not registered");
+      console.log(credentials);
+    }
+  };
+  const registerUser = async () => {
+    try {
+      await createUserWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password
+      );
+      push("/Home");
+    } catch (error) {
+      console.log("error with register user");
+      console.log(credentials);
+    }
+  };
     return(
       <Box sx={{ width: '100%' }}>
       <Box>
@@ -78,9 +123,10 @@ export default function TabsLogin(){
               <TextField id="name-user" label="Usuario" className={styles.txtField} />
             </div>
             <div className={styles.txtFieldContainer}>
-              <TextField id="email-user" label="Email" className={styles.txtField} />
+              <TextField id="email" name="email" label="Email" className={styles.txtField} 
+              onChange={changeUser}/>
             </div>
-            <InputPassword />
+            <InputPassword change={changeUser}/>
             <FormControlLabel
                 control={<Checkbox onChange={checked}/>}
                 label="Acepto los términos y condiciones"
@@ -95,6 +141,7 @@ export default function TabsLogin(){
                   background: "#878787",
                   color: "#c0c0c0"
                 }}}
+                onClick={registerUser}
               >
                 Registrarse
               </Button>

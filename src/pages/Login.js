@@ -9,53 +9,12 @@ import Carousel from "react-material-ui-carousel";
 import { useRouter } from "next/router";
 import ItemCarousel from "../components/molecules/ItemCarousel/ItemCarousel";
 import items from "../utils/itemCarousel.js";
-import { useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { auth } from "../../src/firebase/firebaseApp";
-import LoginButtons from "../components/atoms/LoginButtons/LoginButtons";
+
 import TabsLogin from "../components/molecules/TabsLogin/TabsLogin";
 
 
 const Login = (props) => {
-  const [credentials, setCredencials] = useState({
-    email: "samuel@gmail.com",
-    password: "samuel12345",
-  });
-
-  const { push } = useRouter();
-  const changeUser = (e) => {
-    setCredencials({
-      ...credentials,
-      [e.target.name]: e.target.value,
-    });
-  };
-  const loginUser = async () => {
-    try {
-      await signInWithEmailAndPassword(
-        auth,
-        credentials.email,
-        credentials.password
-      );
-      push("/Home");
-    } catch (error) {
-      console.log("user not registered");
-    }
-  };
-  const registerUser = async () => {
-    try {
-      await createUserWithEmailAndPassword(
-        auth,
-        credentials.email,
-        credentials.password
-      );
-      push("/Home");
-    } catch (error) {
-      console.log("error with register user");
-    }
-  };
+  
   return (
     <PageLayout title="Login">
       <div className={styles.container}>
