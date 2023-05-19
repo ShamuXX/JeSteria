@@ -8,7 +8,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import FormControl from "@mui/material/FormControl";
 import * as styles from "./InputPassword.module.css";
 
-export default function () {
+export default function InputPassword({change}) {
   const [showPassword, setShowPassword] = React.useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
@@ -18,7 +18,7 @@ export default function () {
     <FormControl variant="outlined">
       <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
       <OutlinedInput
-        id="outlined-adornment-password"
+        id="password"
         type={showPassword ? "text" : "password"}
         endAdornment={
           <InputAdornment position="end">
@@ -33,6 +33,8 @@ export default function () {
           </InputAdornment>
         }
         label="Password"
+        name="password"
+        onChange={change}
       />
     </FormControl>
   );

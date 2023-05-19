@@ -8,8 +8,9 @@ import Button from "@mui/material/Button";
 import * as styles from "./LoginButtons.module.css";
 import { useRouter } from "next/navigation";
 
-export default function LoginButtons() {
+export default function LoginButtons({click}) {
   const router = useRouter();
+
   return (
     <div>
       <div className={styles.containerLinks}>
@@ -52,6 +53,7 @@ export default function LoginButtons() {
               background: "rgb(63, 61, 86)",
               marginTop: "2rem",
             }}
+            onClick={click}
           >
             Iniciar Sesión
           </Button>

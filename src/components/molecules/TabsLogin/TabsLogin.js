@@ -11,7 +11,14 @@ import InputPassword from "../InputPassword/InputPassword";
 import Button from "@mui/material/Button";
 import { FormControlLabel } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
+import Alert from '@mui/material/Alert';
+import { useRouter } from "next/router";
 import { useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../../../firebase/firebaseApp";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -53,7 +60,45 @@ export default function TabsLogin(){
   };
   const [state, setSate] = useState(true);
   const checked = () => setSate(!state);
+  const [alertlogin, setAlertlogin] = useState(false);
+  const [alertsignup, setAlertsignup] = useState(false);
+  
+  const [credentials, setCredencials] = useState({
+    email: "samuel@gmail.com",
+    password: "samuel12345",
+  });
 
+  const { push } = useRouter();
+  const changeUser = (e) => {
+    setCredencials({
+      ...credentials,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const loginUser = async () => {
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password
+      );
+      push("/Home");
+    } catch (error) {
+      setAlertlogin(!alertlogin);
+    }
+  };
+  const registerUser = async () => {
+    try {
+      await createUserWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password
+      );
+      push("/Home");
+    } catch (error) {
+      setAlertsignup(!alertsignup);
+    }
+  };
     return(
       <Box sx={{ width: '100%' }}>
       <Box>
@@ -63,10 +108,12 @@ export default function TabsLogin(){
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Inputs />
-        <LoginButtons />
+        {alertlogin ? <Alert severity="error">Usuario o contraseña incorrectos</Alert> : ""}
+        <Inputs change={changeUser}/>
+        <LoginButtons click={loginUser}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
+      {alertsignup ? <Alert severity="error">Rellena los campos con información válida</Alert> : ""}
         <div className={styles.container}>
           <Box sx={{
           display: "flex",
@@ -78,9 +125,10 @@ export default function TabsLogin(){
               <TextField id="name-user" label="Usuario" className={styles.txtField} />
             </div>
             <div className={styles.txtFieldContainer}>
-              <TextField id="email-user" label="Email" className={styles.txtField} />
+              <TextField id="email" name="email" label="Email" className={styles.txtField} 
+              onChange={changeUser}/>
             </div>
-            <InputPassword />
+            <InputPassword change={changeUser}/>
             <FormControlLabel
                 control={<Checkbox onChange={checked}/>}
                 label="Acepto los términos y condiciones"
@@ -95,6 +143,7 @@ export default function TabsLogin(){
                   background: "#878787",
                   color: "#c0c0c0"
                 }}}
+                onClick={registerUser}
               >
                 Registrarse
               </Button>
