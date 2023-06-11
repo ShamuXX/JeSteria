@@ -61,11 +61,15 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   margin-bottom: 2rem;
+  user-select: none; 
+  -webkit-user-drag: none;
 }
 .logo{
   height: 100%;
   width: 100%;
   position: relative;
+  user-select: none; 
+  -webkit-user-drag: none;
 }
 
 .iconGoogle{
