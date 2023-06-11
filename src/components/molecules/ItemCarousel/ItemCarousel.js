@@ -1,4 +1,3 @@
-import { Paper } from "@mui/material";
 import Image from "next/image";
 import styles from "./ItemCarousel.module.css";
 export default function ItemCarousel(props) {
