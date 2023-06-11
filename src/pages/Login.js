@@ -9,12 +9,9 @@ import Carousel from "react-material-ui-carousel";
 import { useRouter } from "next/router";
 import ItemCarousel from "../components/molecules/ItemCarousel/ItemCarousel";
 import items from "../utils/itemCarousel.js";
-
 import TabsLogin from "../components/molecules/TabsLogin/TabsLogin";
 
-
 const Login = (props) => {
-  
   return (
     <PageLayout title="Login">
       <div className={styles.container}>
