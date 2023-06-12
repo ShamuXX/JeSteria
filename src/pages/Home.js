@@ -39,26 +39,21 @@ const Home = () => {
                 <ProgressionActivities
                   text="Hoy"
                   number="2"
-                  iconVisible={true}
-                  styleCard={false}
+                  iconVisible
                 />
                 <ProgressionActivities
                   text="Semana"
                   number="2"
-                  iconVisible={false}
-                  styleCard={false}
                 />
                 <ProgressionActivities
                   text="Mes"
                   number="2"
-                  iconVisible={true}
-                  styleCard={false}
+                  iconVisible
                 />
                 <ProgressionActivities
                   text="Total"
                   number="2"
-                  iconVisible={false}
-                  styleCard={true}
+                  styleCard
                 />
               </div>
             </div>
