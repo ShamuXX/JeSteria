@@ -7,8 +7,9 @@ import IconGoogleCircle from "../../../icons/google";
 import Button from "@mui/material/Button";
 import * as styles from "./LoginButtons.module.css";
 import { useRouter } from "next/navigation";
+import AuthWithGoogle from "@/src/AuthGoogle/AuthGoogle";
 
-export default function LoginButtons({click}) {
+export default function LoginButtons({ click }) {
   const router = useRouter();
 
   return (
@@ -64,7 +65,7 @@ export default function LoginButtons({click}) {
               background: "rgb(255, 255, 255)",
               color: "rgb(63, 61, 86)",
             }}
-            onClick={() => router.push("/Home")}
+            onClick={() => AuthWithGoogle()}
           >
             <IconGoogleCircle />
             Iniciar Sesión con google
