@@ -1,12 +1,10 @@
 import React from "react";
-import Inputs from "../components/atoms/Inputs/Inputs";
 import * as styles from "../styles/LoginStyles.module.css";
 import PageLayout from "../components/molecules/PageLayout";
 import Image from "next/image";
 import logo from "../images/Jesteria.png";
 import FlowerAnimation from "../components/molecules/FlowerAnimation/FlowerAnimation";
 import Carousel from "react-material-ui-carousel";
-import { useRouter } from "next/router";
 import ItemCarousel from "../components/molecules/ItemCarousel/ItemCarousel";
 import items from "../utils/itemCarousel.js";
 import TabsLogin from "../components/molecules/TabsLogin/TabsLogin";
