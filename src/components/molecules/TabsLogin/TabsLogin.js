@@ -53,7 +53,7 @@ function a11yProps(index) {
   };
 }
 
-export default function TabsLogin(){
+export default function TabsLogin({forgot}){
     const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -110,7 +110,7 @@ export default function TabsLogin(){
       <TabPanel value={value} index={0}>
         {alertlogin ? <Alert severity="error">Usuario o contraseña incorrectos</Alert> : ""}
         <Inputs change={changeUser}/>
-        <LoginButtons click={loginUser}/>
+        <LoginButtons click={loginUser} forgot={forgot}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
       {alertsignup ? <Alert severity="error">Rellena los campos con información válida</Alert> : ""}
