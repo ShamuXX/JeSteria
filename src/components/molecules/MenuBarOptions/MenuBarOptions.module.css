@@ -5,4 +5,16 @@
 
 .containerLogOutButton{
   margin-top: 30%;
+  height: 50px;
+  width: 85%;
+  display: flex;
+  margin-left: 8%;
+  color: #626262;
+}
+.containerLogOutInfo{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 10%;
+  padding-top: 3%;
 }
