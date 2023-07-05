@@ -17,6 +17,7 @@ import { useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../../../firebase/firebaseApp";
 
@@ -61,6 +62,7 @@ export default function TabsLogin({ forgot }) {
   const [alertsignup, setAlertsignup] = useState(false);
 
   const [credentials, setCredencials] = useState({
+    name: "User",
     email: "samuel@gmail.com",
     password: "samuel12345",
   });
@@ -91,6 +93,7 @@ export default function TabsLogin({ forgot }) {
         credentials.email,
         credentials.password
       );
+      await updateProfile(auth.currentUser, { displayName: credentials.name });
       push("/Home");
     } catch (error) {
       setAlertsignup(!alertsignup);
@@ -137,9 +140,10 @@ export default function TabsLogin({ forgot }) {
           >
             <div className={styles.txtFieldContainer}>
               <TextField
-                id="name-user"
+                id="name"
                 label="Usuario"
                 className={styles.txtField}
+                onChange={changeUser}
               />
             </div>
             <div className={styles.txtFieldContainer}>
