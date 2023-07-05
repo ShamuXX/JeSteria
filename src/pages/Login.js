@@ -28,10 +28,16 @@ const Login = (props) => {
         <div className={styles.containerSection2}>
           <div className={styles.containerLogo}>
             <Image src={logo} className={styles.logo} alt="Logo" />
-          </div>        
-          <p className={styles.txtWelcome}>{state ? "Bienvenido de nuevo" : "¿No recuerdas tu contraseña?"}</p>     
+          </div>
+          <p className={styles.txtWelcome}>
+            {state ? "Bienvenido de nuevo" : "¿No recuerdas tu contraseña?"}
+          </p>
           <FlowerAnimation />
-          {state ? <TabsLogin forgot={forgot}/> : <ForgetPassword forgot={forgot}/>}
+          {state ? (
+            <TabsLogin forgot={forgot} />
+          ) : (
+            <ForgetPassword forgot={forgot} />
+          )}
         </div>
       </div>
     </PageLayout>
