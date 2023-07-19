@@ -9,7 +9,7 @@ import * as styles from "./LoginButtons.module.css";
 import { useRouter } from "next/navigation";
 import AuthWithGoogle from "@/src/AuthGoogle/AuthGoogle";
 
-export default function LoginButtons({ click }) {
+export default function LoginButtons({ click, forgot }) {
   const router = useRouter();
 
   return (
@@ -23,17 +23,17 @@ export default function LoginButtons({ click }) {
           />
         </div>
         <div className={styles.forgetPassword}>
-          <Link
-            href="/"
+          <Button
             style={{
               marginRight: "40%",
               paddingTop: "2%",
               minWidth: "20%",
               fontSize: "1rem",
             }}
+            onClick={forgot}
           >
             Olvidé mi contraseña
-          </Link>
+          </Button>
         </div>
       </div>
       <div className={styles.buttonsContainer}>
