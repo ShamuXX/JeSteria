@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material'
-import React, { useState } from 'react'
+import React from 'react'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
@@ -9,28 +9,13 @@ import * as styles from './newActivity.module.css'
 import dayjs from 'dayjs'
 import localizedFormat from 'dayjs/plugin/localizedFormat'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
+import useActivity from '../hooks/useActivity'
 dayjs.extend(localizedFormat)
 dayjs.extend(customParseFormat)
 
 export default function NewActity() {
-  const [activity, setActivity] = useState({
-    name: '',
-    description: '',
-    date: null,
-    icon: '',
-  })
-  console.log(activity)
-  const changeActivity = (e) => {
-    setActivity({
-      ...activity,
-      [e.target.name]: e.target.value,
-    })
-  }
+  const { date, activity, handleDateChange, changeActivity } = useActivity()
 
-  const handleDateChange = (date) => {
-    let selectedDate = dayjs(date).format('YYYY-MM-DD')
-    setActivity({ ...activity, date: date })
-  }
   return (
     <div className={styles.container}>
       <div className={styles.containerFirst}>
@@ -63,7 +48,7 @@ export default function NewActity() {
         <p className={styles.title}>Designate date</p>
         <div className={styles.containerCalendar}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateCalendar value={activity.date} onChange={handleDateChange} />
+            <DateCalendar value={date} onChange={handleDateChange} />
           </LocalizationProvider>
         </div>
         <p className={styles.title}>Icon</p>
