@@ -1,40 +1,36 @@
-import { TextField } from "@mui/material";
-import React, { useState } from "react";
-import TextareaAutosize from "@mui/base/TextareaAutosize";
-import { Input } from "@mui/material-next";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { Home, TrendingUp, AssignmentInd } from "@mui/icons-material";
-import * as styles from "./newActivity.module.css";
-import dayjs from "dayjs";
-import localizedFormat from "dayjs/plugin/localizedFormat";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-dayjs.extend(localizedFormat);
-dayjs.extend(customParseFormat);
+import { TextField } from '@mui/material'
+import React, { useState } from 'react'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
+import { Select, MenuItem, FormControl } from '@mui/material'
+import { Home, TrendingUp, AssignmentInd } from '@mui/icons-material'
+import * as styles from './newActivity.module.css'
+import dayjs from 'dayjs'
+import localizedFormat from 'dayjs/plugin/localizedFormat'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
+dayjs.extend(localizedFormat)
+dayjs.extend(customParseFormat)
 
 export default function NewActity() {
   const [activity, setActivity] = useState({
-    name: "",
-    description: "",
+    name: '',
+    description: '',
     date: null,
-    icon: "",
-  });
-  console.log(activity);
+    icon: '',
+  })
+  console.log(activity)
   const changeActivity = (e) => {
     setActivity({
       ...activity,
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
 
   const handleDateChange = (date) => {
-    let selectedDate = dayjs(date).format("YYYY-MM-DD");
-    setActivity({ ...activity, date: date });
-  };
+    let selectedDate = dayjs(date).format('YYYY-MM-DD')
+    setActivity({ ...activity, date: date })
+  }
   return (
     <div className={styles.container}>
       <div className={styles.containerFirst}>
@@ -53,12 +49,12 @@ export default function NewActity() {
           name="description"
           onChange={changeActivity}
           style={{
-            width: "96%",
-            height: "200px",
-            padding: "10px",
-            fontSize: "16px",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
+            width: '96%',
+            height: '200px',
+            padding: '10px',
+            fontSize: '16px',
+            border: '1px solid #ccc',
+            borderRadius: '4px',
           }}
         />
       </div>
@@ -78,23 +74,23 @@ export default function NewActity() {
             value={activity.icon}
             onChange={changeActivity}
             displayEmpty
-            inputProps={{ "aria-label": "Without label" }}
+            inputProps={{ 'aria-label': 'Without label' }}
           >
             <MenuItem value="">
               <em>None</em>
             </MenuItem>
-            <MenuItem value={"Home"}>
+            <MenuItem value={'Home'}>
               <Home />
             </MenuItem>
-            <MenuItem value={"TrendingUp"}>
+            <MenuItem value={'TrendingUp'}>
               <TrendingUp />
             </MenuItem>
-            <MenuItem value={"AssignmentInd"}>
+            <MenuItem value={'AssignmentInd'}>
               <AssignmentInd />
             </MenuItem>
           </Select>
         </FormControl>
       </div>
     </div>
-  );
+  )
 }
