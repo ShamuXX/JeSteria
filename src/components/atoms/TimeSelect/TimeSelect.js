@@ -35,21 +35,21 @@ export default function TimeSelect({ text }) {
   });
   return (
     <div className={styles.containerAllElements}>
-      <header className={styles.main}>
-        <p className={styles.text}>{text}</p>
-        <div className={styles.container}>
-          <div className={styles.hourContainer}>{hour}</div>
-          <div className={styles.minutesContainer}>{minutes}</div>
-        </div>
+      <header>
+        <p>{text}</p>
+        <main>
+          <section className={styles.hourContainer}>{hour}</section>
+          <section className={styles.minutesContainer}>{minutes}</section>
+        </main>
       </header>
-      <div className={styles.containerFormats}>
-        <div className={styles.formatTime}>
+      <section>
+        <div>
           <p>Am</p>
         </div>
-        <div className={styles.formatTime}>
+        <div>
           <p>Pm</p>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

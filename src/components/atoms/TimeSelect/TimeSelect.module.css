@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
 }
-.container {
+.containerAllElements > header > main {
   min-height: 6em;
   display: flex;
   align-items: center;
@@ -69,7 +69,7 @@
   scrollbar-width: none;
 }
 
-.formatTime {
+.containerAllElements > section > div {
   width: 80%;
   height: 18%;
   text-align: center;
@@ -81,21 +81,21 @@
   margin-left: 30%;
 }
 
-.formatTime:hover {
+.containerAllElements > section > div:hover {
   background-color: #3f3d56;
   color: white;
   cursor: pointer;
 }
 
-.containerFormats {
+.containerAllElements > section {
   width: 6%;
 }
 
-.main {
+.containerAllElements > header {
   width: 15%;
 }
 
-.text {
+.containerAllElements > header > p {
   margin-left: 7%;
   margin-bottom: 10%;
   color: #6b6b6b;
