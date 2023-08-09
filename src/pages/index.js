@@ -9,7 +9,7 @@ import PageLayout from "../components/molecules/PageLayout";
 import Card from "../components/molecules/Card/Card";
 import ButtonSchedule from "../components/atoms/ButtonSchedule/ButtonSchedule";
 import Calendar from "../components/molecules/CalendarComponent/Calendar";
-
+import TimeSelect from "../components/atoms/TimeSelect/TimeSelect";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +17,7 @@ export default function Index() {
   return (
     <div>
       <Link href="/Login">adsd</Link>
+      <TimeSelect text={"Hora de inicio"}/>
     </div>
   );
 }
