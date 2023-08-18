@@ -1,0 +1,41 @@
+
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: #F0EEEE;
+  margin: 0 20px 0 20px;
+  border-radius: 15px;
+  height: 80%;
+}
+
+.containerFirst{
+  width: 50%;
+  padding-top: 20px;
+  margin-left: 30px;
+}
+
+.containerSecond{
+  padding-top: 20px;
+  margin-left: 70px;
+}
+
+.textDescription{
+  width: 300px;
+  height: 700px;
+}
+
+.title{
+  padding-bottom: 10px;
+}
+
+.containerCalendar{
+  width: 350px;
+  background-color: white;
+  border-radius: 10px;
+  
+ 
+}
+
+.inputName{
+  width: 100%;
+}
