@@ -1,9 +1,9 @@
-import Head from "next/head";
-import Image from "next/image";
+import Head from 'next/head'
+import Image from 'next/image'
 
-import * as styles from "./HeaderBar.module.css";
-import { NotificationsActive } from "@mui/icons-material";
-import { Button } from "@mui/material-next";
+import * as styles from './HeaderBar.module.css'
+import { NotificationsActive } from '@mui/icons-material'
+import { Button } from '@mui/material'
 
 export default function HeaderBar(props) {
   return (
@@ -15,12 +15,12 @@ export default function HeaderBar(props) {
       <header className={styles.header}>{props.header}</header>
       <div className={styles.containerIcon}></div>
       <div className={styles.containerImage}>
-        <NotificationsActive style={{ color: "#353535" }} />
+        <NotificationsActive style={{ color: '#353535' }} />
         <Button
           style={{
-            height: "50%",
-            width: "0%",
-            marginLeft: "30%",
+            height: '50%',
+            width: '0%',
+            marginLeft: '30%',
           }}
           href={props.href}
         >
@@ -28,10 +28,10 @@ export default function HeaderBar(props) {
             src={props.imgProfile}
             alt="img-profile"
             className={styles.profileImage}
-            style={{ width: "80px", height: "70px" }}
+            style={{ width: '80px', height: '70px' }}
           />
         </Button>
       </div>
     </div>
-  );
+  )
 }

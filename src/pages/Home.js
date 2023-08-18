@@ -1,18 +1,20 @@
-import React, { useContext } from "react";
-import Card from "../components/molecules/Card/Card";
-import * as styles from "../styles/Home.module.css";
-import Image from "next/image";
-import logo from "../images/LogoLetrasBlancas.png";
-import MenuBarOption from "../components/molecules/MenuBarOptions/MenuBarOptions";
-import HeaderBar from "../components/atoms/HeaderBar/HeaderBar";
-import imgProfile from "../images/profile.png";
-import ProgressionActivities from "../components/atoms/ProgressionActivities/ProgressionActivities";
-import Calendar from "../components/molecules/CalendarComponent/Calendar";
-import PercentageCard from "../components/molecules/PercentageCard/PercentageCard";
-import ButtonSchedule from "../components/atoms/ButtonSchedule/ButtonSchedule";
-import PageLayout from "../components/molecules/PageLayout";
+import React, { useState } from 'react'
+import Card from '../components/molecules/Card/Card'
+import * as styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import logo from '../images/LogoLetrasBlancas.png'
+import MenuBarOption from '../components/molecules/MenuBarOptions/MenuBarOptions'
+import ProgressionActivities from '../components/atoms/ProgressionActivities/ProgressionActivities'
+import Calendar from '../components/molecules/CalendarComponent/Calendar'
+import PercentageCard from '../components/molecules/PercentageCard/PercentageCard'
+import ButtonSchedule from '../components/atoms/ButtonSchedule/ButtonSchedule'
+import PageLayout from '../components/molecules/PageLayout'
+import NewActity from '../homeFunctions/newActivity'
+import HeaderBar from '../components/atoms/HeaderBar/HeaderBar'
+import imgProfile from '../images/profile.png'
 
 const Home = () => {
+  const [changeFunctionPage] = useState('1')
   return (
     <PageLayout>
       <div className={styles.containerPage}>
@@ -33,43 +35,34 @@ const Home = () => {
               href="/"
               imgProfile={imgProfile}
             />
-            <div className={styles.containerGruop}>
-              <div className={styles.containerProgessionAct}>
-                <p className={styles.textAct}>Actividades Completadas</p>
-                <ProgressionActivities
-                  text="Hoy"
-                  number="2"
-                  iconVisible
-                />
-                <ProgressionActivities
-                  text="Semana"
-                  number="2"
-                />
-                <ProgressionActivities
-                  text="Mes"
-                  number="2"
-                  iconVisible
-                />
-                <ProgressionActivities
-                  text="Total"
-                  number="2"
-                  styleCard
-                />
-              </div>
-            </div>
-            <div style={{ display: "flex", width: "100%" }}>
-              <Card />
-              <Calendar />
+
+            {changeFunctionPage === '1' && <NewActity />}
+            {changeFunctionPage === '2' && (
               <div>
-                <PercentageCard />
-                <ButtonSchedule />
+                <div className={styles.containerGruop}>
+                  <div className={styles.containerProgessionAct}>
+                    <p className={styles.textAct}>Actividades Completadas</p>
+                    <ProgressionActivities text="Hoy" number="2" iconVisible />
+                    <ProgressionActivities text="Semana" number="2" />
+                    <ProgressionActivities text="Mes" number="2" iconVisible />
+                    <ProgressionActivities text="Total" number="2" styleCard />
+                  </div>
+                </div>
+                <div style={{ display: 'flex', width: '100%' }}>
+                  <Card />
+                  <Calendar />
+                  <div>
+                    <PercentageCard />
+                    <ButtonSchedule />
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
     </PageLayout>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

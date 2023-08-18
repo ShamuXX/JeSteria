@@ -19,5 +19,5 @@ export default function Index() {
       <Link href="/Login">adsd</Link>
       <TimeSelect text={"Hora de inicio"}/>
     </div>
-  );
+  )
 }

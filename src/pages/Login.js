@@ -8,8 +8,13 @@ import Carousel from "react-material-ui-carousel";
 import ItemCarousel from "../components/molecules/ItemCarousel/ItemCarousel";
 import items from "../utils/itemCarousel.js";
 import TabsLogin from "../components/molecules/TabsLogin/TabsLogin";
+import ForgetPassword from "../components/molecules/ForgetPassword/ForgetPassword";
+import { useState } from "react";
 
 const Login = (props) => {
+  const [state, setSate] = useState(true);
+  const forgot = () => setSate(!state);
+  console.log("Holi");
   return (
     <PageLayout title="Login">
       <div className={styles.container}>
@@ -24,9 +29,15 @@ const Login = (props) => {
           <div className={styles.containerLogo}>
             <Image src={logo} className={styles.logo} alt="Logo" />
           </div>
-          <p className={styles.txtWelcome}>Bienvenido de nuevo</p>
+          <p className={styles.txtWelcome}>
+            {state ? "Bienvenido de nuevo" : "¿No recuerdas tu contraseña?"}
+          </p>
           <FlowerAnimation />
-          <TabsLogin />
+          {state ? (
+            <TabsLogin forgot={forgot} />
+          ) : (
+            <ForgetPassword forgot={forgot} />
+          )}
         </div>
       </div>
     </PageLayout>
