@@ -20,10 +20,10 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../../../firebase/firebaseApp";
+import getDataUser from "../../../firebase/getDataUser";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -62,18 +62,20 @@ export default function TabsLogin({ forgot }) {
   const [alertsignup, setAlertsignup] = useState(false);
 
   const [credentials, setCredencials] = useState({
-    name: "User",
-    email: "samuel@gmail.com",
-    password: "samuel12345",
+    name: "",
+    email: "",
+    password: "",
   });
 
   const { push } = useRouter();
+
   const changeUser = (e) => {
     setCredencials({
       ...credentials,
       [e.target.name]: e.target.value,
     });
   };
+
   const loginUser = async () => {
     try {
       await signInWithEmailAndPassword(
@@ -87,6 +89,7 @@ export default function TabsLogin({ forgot }) {
     }
   };
   const registerUser = async () => {
+    const { uploadData } = getDataUser();
     try {
       await createUserWithEmailAndPassword(
         auth,
@@ -94,10 +97,14 @@ export default function TabsLogin({ forgot }) {
         credentials.password
       );
       await updateProfile(auth.currentUser, { displayName: credentials.name });
+      auth;
       push("/Home");
     } catch (error) {
+      console.log(error);
       setAlertsignup(!alertsignup);
     }
+    const userData = auth.currentUser;
+    uploadData(userData);
   };
   return (
     <Box sx={{ width: "100%" }}>
@@ -141,6 +148,7 @@ export default function TabsLogin({ forgot }) {
             <div className={styles.txtFieldContainer}>
               <TextField
                 id="name"
+                name="name"
                 label="Usuario"
                 className={styles.txtField}
                 onChange={changeUser}

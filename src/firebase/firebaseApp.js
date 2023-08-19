@@ -1,5 +1,6 @@
-import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCGEo-un__FnINmGqeRnexcIdpwQYYYlmU",
@@ -12,9 +13,13 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase();
+
 const auth = getAuth(app);
 
 //Export function to initialize firebase.
 
-export { auth };
+export { auth, db };
