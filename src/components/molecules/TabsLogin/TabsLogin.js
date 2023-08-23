@@ -19,7 +19,7 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "../../../firebase/firebaseApp";
+import { getAuth } from "firebase/auth";
 import getDataUser from "../../../firebase/getDataUser";
 
 function TabPanel(props) {
@@ -51,6 +51,7 @@ function a11yProps(index) {
 }
 
 export default function TabsLogin({ forgot }) {
+  const auth = getAuth();
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -62,9 +63,9 @@ export default function TabsLogin({ forgot }) {
   const [alertsignup, setAlertsignup] = useState(false);
 
   const [credentials, setCredencials] = useState({
-    name: "",
-    email: "",
-    password: "",
+    name: "himeko",
+    email: "himeko@gmail.com",
+    password: "himeko123",
   });
 
   const { push } = useRouter();
@@ -89,7 +90,6 @@ export default function TabsLogin({ forgot }) {
     }
   };
   const registerUser = async () => {
-    const { uploadData } = getDataUser();
     try {
       await createUserWithEmailAndPassword(
         auth,
@@ -103,8 +103,8 @@ export default function TabsLogin({ forgot }) {
       console.log(error);
       setAlertsignup(!alertsignup);
     }
-    const userData = auth.currentUser;
-    uploadData(userData);
+    const userData = getDataUser(auth.currentUser);
+    userData.addUserDocument();
   };
   return (
     <Box sx={{ width: "100%" }}>
