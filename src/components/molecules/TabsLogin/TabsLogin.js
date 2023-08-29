@@ -19,11 +19,11 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "../../../firebase/firebaseApp";
+import { getAuth } from "firebase/auth";
+import getDataUser from "../../../firebase/getDataUser";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -51,6 +51,7 @@ function a11yProps(index) {
 }
 
 export default function TabsLogin({ forgot }) {
+  const auth = getAuth();
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -62,18 +63,20 @@ export default function TabsLogin({ forgot }) {
   const [alertsignup, setAlertsignup] = useState(false);
 
   const [credentials, setCredencials] = useState({
-    name: "User",
-    email: "samuel@gmail.com",
-    password: "samuel12345",
+    name: "himeko",
+    email: "himeko@gmail.com",
+    password: "himeko123",
   });
 
   const { push } = useRouter();
+
   const changeUser = (e) => {
     setCredencials({
       ...credentials,
       [e.target.name]: e.target.value,
     });
   };
+
   const loginUser = async () => {
     try {
       await signInWithEmailAndPassword(
@@ -94,10 +97,14 @@ export default function TabsLogin({ forgot }) {
         credentials.password
       );
       await updateProfile(auth.currentUser, { displayName: credentials.name });
+      auth;
       push("/Home");
     } catch (error) {
+      console.log(error);
       setAlertsignup(!alertsignup);
     }
+    const userData = getDataUser(auth.currentUser);
+    userData.addUserDocument();
   };
   return (
     <Box sx={{ width: "100%" }}>
@@ -141,6 +148,7 @@ export default function TabsLogin({ forgot }) {
             <div className={styles.txtFieldContainer}>
               <TextField
                 id="name"
+                name="name"
                 label="Usuario"
                 className={styles.txtField}
                 onChange={changeUser}

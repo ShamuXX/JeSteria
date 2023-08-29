@@ -14,7 +14,6 @@ import { useState } from "react";
 const Login = (props) => {
   const [state, setSate] = useState(true);
   const forgot = () => setSate(!state);
-  console.log("Holi");
   return (
     <PageLayout title="Login">
       <div className={styles.container}>

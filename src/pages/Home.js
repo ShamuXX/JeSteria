@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
-import Card from '../components/molecules/Card/Card'
-import * as styles from '../styles/Home.module.css'
-import Image from 'next/image'
-import logo from '../images/LogoLetrasBlancas.png'
-import MenuBarOption from '../components/molecules/MenuBarOptions/MenuBarOptions'
-import ProgressionActivities from '../components/atoms/ProgressionActivities/ProgressionActivities'
-import Calendar from '../components/molecules/CalendarComponent/Calendar'
-import PercentageCard from '../components/molecules/PercentageCard/PercentageCard'
-import ButtonSchedule from '../components/atoms/ButtonSchedule/ButtonSchedule'
-import PageLayout from '../components/molecules/PageLayout'
-import NewActity from '../homeFunctions/newActivity'
-import HeaderBar from '../components/atoms/HeaderBar/HeaderBar'
-import imgProfile from '../images/profile.png'
+import React, { useState } from "react";
+import Card from "../components/molecules/Card/Card";
+import * as styles from "../styles/Home.module.css";
+import Image from "next/image";
+import logo from "../images/LogoLetrasBlancas.png";
+import MenuBarOption from "../components/molecules/MenuBarOptions/MenuBarOptions";
+import ProgressionActivities from "../components/atoms/ProgressionActivities/ProgressionActivities";
+import Calendar from "../components/molecules/CalendarComponent/Calendar";
+import PercentageCard from "../components/molecules/PercentageCard/PercentageCard";
+import ButtonSchedule from "../components/atoms/ButtonSchedule/ButtonSchedule";
+import PageLayout from "../components/molecules/PageLayout";
+import NewActity from "../homeFunctions/newActivity";
+import HeaderBar from "../components/atoms/HeaderBar/HeaderBar";
+import imgProfile from "../images/profile.png";
+import { useAuthUser } from "../hooks/useAuthUser";
 
 const Home = () => {
-  const [changeFunctionPage] = useState('1')
+  useAuthUser();
+  const [changeFunctionPage] = useState("1");
   return (
     <PageLayout>
       <div className={styles.containerPage}>
@@ -36,8 +38,8 @@ const Home = () => {
               imgProfile={imgProfile}
             />
 
-            {changeFunctionPage === '1' && <NewActity />}
-            {changeFunctionPage === '2' && (
+            {changeFunctionPage === "1" && <NewActity />}
+            {changeFunctionPage === "2" && (
               <div>
                 <div className={styles.containerGruop}>
                   <div className={styles.containerProgessionAct}>
@@ -48,7 +50,7 @@ const Home = () => {
                     <ProgressionActivities text="Total" number="2" styleCard />
                   </div>
                 </div>
-                <div style={{ display: 'flex', width: '100%' }}>
+                <div style={{ display: "flex", width: "100%" }}>
                   <Card />
                   <Calendar />
                   <div>
@@ -62,7 +64,7 @@ const Home = () => {
         </div>
       </div>
     </PageLayout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
