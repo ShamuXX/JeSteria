@@ -1,8 +1,10 @@
 .containerAllElements {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .containerAllElements > header > main {
+  width: 8rem;
   min-height: 6em;
   display: flex;
   align-items: center;
@@ -10,6 +12,8 @@
   border: 2px solid rgba(107, 107, 107, 0.3);
   border-radius: 10px 10px 10px 10px;
   border-style: solid;
+  margin: 0 10% 0 10%;
+  background-color: white;
 }
 
 .hourContainer {
@@ -70,15 +74,14 @@
 }
 
 .containerAllElements > section > div {
-  width: 80%;
+  width: 3rem;
   height: 18%;
   text-align: center;
   background-color: white;
   border: 1px solid rgba(107, 107, 107, 0.3);
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 0.7em;
   margin-bottom: 50%;
-  margin-left: 30%;
 }
 
 .containerAllElements > section > div:hover {
@@ -93,12 +96,11 @@
 }
 
 .containerAllElements > header {
-  width: 15%;
+  width: 80%;
 }
 
 .containerAllElements > header > p {
-  margin-left: 7%;
-  font-size: 1.3em;
+  font-size: 1em;
   margin-bottom: 10%;
   color: #6b6b6b;
 }

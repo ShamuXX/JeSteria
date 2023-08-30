@@ -1,20 +1,32 @@
-import { TextField } from '@mui/material'
-import React from 'react'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
-import { Select, MenuItem, FormControl } from '@mui/material'
-import { Home, TrendingUp, AssignmentInd } from '@mui/icons-material'
-import * as styles from './newActivity.module.css'
-import dayjs from 'dayjs'
-import localizedFormat from 'dayjs/plugin/localizedFormat'
-import customParseFormat from 'dayjs/plugin/customParseFormat'
-import useActivity from '../hooks/useActivity'
-dayjs.extend(localizedFormat)
-dayjs.extend(customParseFormat)
+import { TextField } from "@mui/material";
+import React, { useState } from "react";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+import { Select, MenuItem, FormControl } from "@mui/material";
+import { Home, TrendingUp, AssignmentInd } from "@mui/icons-material";
+import * as styles from "./newActivity.module.css";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+import useActivity from "../hooks/useActivity";
+import getDataUser from "../firebase/getDataUser";
+import TimeSelect from "../components/atoms/TimeSelect/TimeSelect";
+dayjs.extend(localizedFormat);
+dayjs.extend(customParseFormat);
 
-export default function NewActity() {
-  const { date, activity, handleDateChange, changeActivity } = useActivity()
+export default function NewActity(props) {
+  const { date, activity, handleDateChange, changeActivity } = useActivity();
+  const [timeStart, setTimeStart] = useState("");
+  const [timeEnd, setTimeEnd] = useState("");
+  const activityData = getDataUser(activity);
+
+  const handleClick = () => {
+    activity.timeStart = timeStart;
+    activity.timeEnd = timeEnd;
+    activityData.addActivity();
+    props.setPage("2");
+  };
 
   return (
     <div className={styles.container}>
@@ -34,14 +46,18 @@ export default function NewActity() {
           name="description"
           onChange={changeActivity}
           style={{
-            width: '96%',
-            height: '200px',
-            padding: '10px',
-            fontSize: '16px',
-            border: '1px solid #ccc',
-            borderRadius: '4px',
+            width: "96%",
+            height: "200px",
+            padding: "10px",
+            fontSize: "16px",
+            border: "1px solid #ccc",
+            borderRadius: "4px",
           }}
         />
+        <div className={styles.containerTimeSelect}>
+          <TimeSelect text={"Hora de inicio"} setTime={setTimeStart} />
+          <TimeSelect text={"Hora de termino"} setTime={setTimeEnd} />
+        </div>
       </div>
 
       <div className={styles.containerSecond}>
@@ -59,23 +75,24 @@ export default function NewActity() {
             value={activity.icon}
             onChange={changeActivity}
             displayEmpty
-            inputProps={{ 'aria-label': 'Without label' }}
+            inputProps={{ "aria-label": "Without label" }}
           >
             <MenuItem value="">
               <em>None</em>
             </MenuItem>
-            <MenuItem value={'Home'}>
+            <MenuItem value={"Home"}>
               <Home />
             </MenuItem>
-            <MenuItem value={'TrendingUp'}>
+            <MenuItem value={"TrendingUp"}>
               <TrendingUp />
             </MenuItem>
-            <MenuItem value={'AssignmentInd'}>
+            <MenuItem value={"AssignmentInd"}>
               <AssignmentInd />
             </MenuItem>
           </Select>
         </FormControl>
+        <button onClick={handleClick}>sendData</button>
       </div>
     </div>
-  )
+  );
 }
