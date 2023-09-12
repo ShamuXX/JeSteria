@@ -1,7 +1,7 @@
 import * as styles from "./TimeSelect.module.css";
 import { useState } from "react";
 
-export default function TimeSelect({ text }) {
+export default function TimeSelect(props) {
   const timeValHour = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const timeValMinutes = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
 
@@ -11,11 +11,16 @@ export default function TimeSelect({ text }) {
 
   const handleHour = (index) => () => setStateHour(index);
   const handleMinute = (index) => () => setStateMinute(index);
-  function handleIndicator(val) {
+  const Time = {
+    Hour: timeValHour[stateHour],
+    Minutes: timeValMinutes[stateMinute],
+    IndicateTime: indicator,
+  };
+
+  const handleIndicator = (val) => {
     setIndicator(val);
-  }
-  const Hour = timeValHour[stateHour];
-  const Minutes = timeValMinutes[stateMinute];
+    props.setTime(Time);
+  };
 
   const hour = timeValHour.map((hour, Index) => {
     const isActive = Index === stateHour ? styles.active : "";
@@ -40,7 +45,7 @@ export default function TimeSelect({ text }) {
   return (
     <div className={styles.containerAllElements}>
       <header>
-        <p>{text}</p>
+        <p>{props.text}</p>
         <main>
           <section className={styles.hourContainer}>{hour}</section>
           <section className={styles.minutesContainer}>{minutes}</section>

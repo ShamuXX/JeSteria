@@ -16,7 +16,7 @@ import { useAuthUser } from "../hooks/useAuthUser";
 
 const Home = () => {
   useAuthUser();
-  const [changeFunctionPage] = useState("1");
+  const [changeFunctionPage, setChangeFunctionPage] = useState("2");
   return (
     <PageLayout>
       <div className={styles.containerPage}>
@@ -38,7 +38,9 @@ const Home = () => {
               imgProfile={imgProfile}
             />
 
-            {changeFunctionPage === "1" && <NewActity />}
+            {changeFunctionPage === "1" && (
+              <NewActity setPage={setChangeFunctionPage} />
+            )}
             {changeFunctionPage === "2" && (
               <div>
                 <div className={styles.containerGruop}>
@@ -55,7 +57,7 @@ const Home = () => {
                   <Calendar />
                   <div>
                     <PercentageCard />
-                    <ButtonSchedule />
+                    <ButtonSchedule setPage={setChangeFunctionPage} />
                   </div>
                 </div>
               </div>

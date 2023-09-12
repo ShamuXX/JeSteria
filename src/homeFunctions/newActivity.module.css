@@ -1,41 +1,43 @@
-
 .container {
   display: flex;
   flex-direction: row;
-  background-color: #F0EEEE;
+  background-color: #f0eeee;
   margin: 0 20px 0 20px;
   border-radius: 15px;
   height: 80%;
 }
 
-.containerFirst{
+.containerFirst {
   width: 50%;
   padding-top: 20px;
   margin-left: 30px;
 }
 
-.containerSecond{
+.containerSecond {
   padding-top: 20px;
   margin-left: 70px;
 }
 
-.textDescription{
+.textDescription {
   width: 300px;
   height: 700px;
 }
 
-.title{
+.title {
   padding-bottom: 10px;
 }
 
-.containerCalendar{
+.containerCalendar {
   width: 350px;
   background-color: white;
   border-radius: 10px;
-  
- 
 }
 
-.inputName{
+.containerTimeSelect {
+  display: flex;
+  flex-direction: row;
+}
+
+.inputName {
   width: 100%;
 }
