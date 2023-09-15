@@ -1,0 +1,48 @@
+.container {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  */
+  width: 230px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  padding: 0 0 0.4em 0;
+}
+
+.container > header {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9em;
+  border-radius: 6px 6px 0 0;
+  background-color: #b5a8ba;
+}
+.container > header > h4 {
+  margin-inline: 0.9em;
+}
+
+.icon {
+  margin-left: auto;
+  margin-right: 0.6em;
+}
+
+.containerText {
+  display: flex;
+  flex-direction: row;
+  padding: 0.3em 0 0 0;
+  font-size: 0.8em;
+  margin-inline: 0.9em;
+}
+
+.containerHour {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.7em;
+  margin-inline: 0.9em;
+}
+
+.containerHour > p {
+  color: #7e7e7e;
+}
+
+.containerHour > p {
+  margin-right: 50px;
+}
