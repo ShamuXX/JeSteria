@@ -13,9 +13,12 @@ import NewActity from "../homeFunctions/newActivity";
 import HeaderBar from "../components/atoms/HeaderBar/HeaderBar";
 import imgProfile from "../images/profile.png";
 import { useAuthUser } from "../hooks/useAuthUser";
+import getDataUser from "../firebase/getDataUser";
 
 const Home = () => {
   useAuthUser();
+  const activityData = getDataUser();
+  activityData.getDataActivity();
   const [changeFunctionPage, setChangeFunctionPage] = useState("2");
   return (
     <PageLayout>
