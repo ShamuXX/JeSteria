@@ -36,22 +36,26 @@ export default function getDataUser(data) {
     }
   };
   const getDataActivity = async () => {
-    const userId = getAuth().currentUser.uid;
-    const usuariosCollectionRef = collection(database, "usuarios");
+    try {
+      const userId = getAuth().currentUser.uid;
+      const usuariosCollectionRef = collection(database, "usuarios");
 
-    const activitiesQuery = query(
-      collection(usuariosCollectionRef, userId, "activities")
-    );
+      const activitiesQuery = query(
+        collection(usuariosCollectionRef, userId, "activities")
+      );
 
-    getDocs(activitiesQuery)
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          console.log(doc.id, " => ", doc.data());
-        });
-      })
-      .catch((error) => {
-        console.error("Error al obtener documentos de actividades: ", error);
+      const querySnapshot = await getDocs(activitiesQuery);
+      const activitiesData = [];
+
+      querySnapshot.forEach((doc) => {
+        activitiesData.push(doc.data());
       });
+
+      return activitiesData;
+    } catch (error) {
+      console.error("Error al obtener documentos de actividades: ", error);
+      throw error;
+    }
   };
 
   return {
