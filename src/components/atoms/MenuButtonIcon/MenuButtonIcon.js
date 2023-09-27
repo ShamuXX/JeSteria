@@ -30,9 +30,8 @@ const IconType = ({ type }) => {
 };
 
 export default function MenuButtonIcon(props) {
-  const { push } = useRouter();
   function onHandleClick() {
-    push(props.navigate);
+    props.setChange(props.navigate);
   }
   return (
     <div className={styles.buttonContainer} onClick={onHandleClick}>

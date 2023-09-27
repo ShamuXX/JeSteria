@@ -10,16 +10,14 @@ import PercentageCard from "../components/molecules/PercentageCard/PercentageCar
 import ButtonSchedule from "../components/atoms/ButtonSchedule/ButtonSchedule";
 import PageLayout from "../components/molecules/PageLayout";
 import NewActity from "../homeFunctions/newActivity";
+import DailyManagment from "../homeFunctions/dailyManagment";
 import HeaderBar from "../components/atoms/HeaderBar/HeaderBar";
 import imgProfile from "../images/profile.png";
 import { useAuthUser } from "../hooks/useAuthUser";
-import getDataUser from "../firebase/getDataUser";
 
 const Home = () => {
   useAuthUser();
-  const activityData = getDataUser();
-  activityData.getDataActivity();
-  const [changeFunctionPage, setChangeFunctionPage] = useState("2");
+  const [changeFunctionPage, setChangeFunctionPage] = useState("1");
   return (
     <PageLayout>
       <div className={styles.containerPage}>
@@ -28,7 +26,7 @@ const Home = () => {
             <Image src={logo} className={styles.logo} alt="Logo" />
           </div>
           <div className={styles.containerMenuButtons}>
-            <MenuBarOption />
+            <MenuBarOption changePage={setChangeFunctionPage} />
           </div>
         </div>
         <div className={styles.container2}>
@@ -40,11 +38,7 @@ const Home = () => {
               href="/"
               imgProfile={imgProfile}
             />
-
             {changeFunctionPage === "1" && (
-              <NewActity setPage={setChangeFunctionPage} />
-            )}
-            {changeFunctionPage === "2" && (
               <div>
                 <div className={styles.containerGruop}>
                   <div className={styles.containerProgessionAct}>
@@ -65,6 +59,10 @@ const Home = () => {
                 </div>
               </div>
             )}
+            {changeFunctionPage === "2" && (
+              <NewActity setPage={setChangeFunctionPage} />
+            )}
+            {changeFunctionPage === "3" && <DailyManagment />}
           </div>
         </div>
       </div>
