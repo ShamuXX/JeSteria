@@ -1,5 +1,12 @@
 import database from "./firebaseApp";
-import { doc, setDoc, collection, addDoc } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  collection,
+  addDoc,
+  query,
+  getDocs,
+} from "firebase/firestore";
 import "firebase/database";
 import { getAuth } from "firebase/auth";
 
@@ -28,9 +35,32 @@ export default function getDataUser(data) {
       console.log("Error al agregar actividad:", error);
     }
   };
+  const getDataActivity = async () => {
+    try {
+      const userId = getAuth().currentUser.uid;
+      const usuariosCollectionRef = collection(database, "usuarios");
+
+      const activitiesQuery = query(
+        collection(usuariosCollectionRef, userId, "activities")
+      );
+
+      const querySnapshot = await getDocs(activitiesQuery);
+      const activitiesData = [];
+
+      querySnapshot.forEach((doc) => {
+        activitiesData.push(doc.data());
+      });
+
+      return activitiesData;
+    } catch (error) {
+      console.error("Error al obtener documentos de actividades: ", error);
+      throw error;
+    }
+  };
 
   return {
     addUserDocument,
     addActivity,
+    getDataActivity,
   };
 }

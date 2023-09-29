@@ -25,7 +25,7 @@ export default function NewActity(props) {
     activity.timeStart = timeStart;
     activity.timeEnd = timeEnd;
     activityData.addActivity();
-    props.setPage("2");
+    props.setPage("1");
   };
 
   return (
@@ -37,6 +37,7 @@ export default function NewActity(props) {
           name="name"
           label="name"
           size="small"
+          inputProps={{ maxLength: 25 }}
           className={styles.inputName}
           onChange={changeActivity}
         />

@@ -1,0 +1,15 @@
+.container {
+  display: flexbox;
+  background-color: #f0eeee;
+  margin: 0 20px 0 20px;
+  border-radius: 15px;
+  height: 80%;
+  padding-inline: 20px;
+}
+
+.activityList {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
