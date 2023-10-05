@@ -45,11 +45,9 @@ export default function getDataUser(data) {
       );
 
       const querySnapshot = await getDocs(activitiesQuery);
-      const activitiesData = [];
 
-      querySnapshot.forEach((doc) => {
-        activitiesData.push(doc.data());
-      });
+      const activitiesData = querySnapshot.docs.map((doc) => doc.data());
+      console.log(activitiesData);
 
       return activitiesData;
     } catch (error) {

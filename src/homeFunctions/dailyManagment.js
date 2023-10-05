@@ -17,7 +17,7 @@ export default function DailyManagment(props) {
       }
     };
     fetchData();
-  }, [activityData]);
+  }, []);
 
   return (
     <div className={styles.container}>

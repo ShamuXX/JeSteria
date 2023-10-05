@@ -19,5 +19,5 @@ export const useAuthUser = () => {
         push("/");
       }
     });
-  }, [pathname, push, setIsLogged]);
+  }, []);
 };
