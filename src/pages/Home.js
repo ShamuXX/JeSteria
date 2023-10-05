@@ -16,7 +16,7 @@ import imgProfile from "../images/profile.png";
 import { useAuthUser } from "../hooks/useAuthUser";
 
 const Home = () => {
-  useAuthUser();
+  //useAuthUser();
   const [changeFunctionPage, setChangeFunctionPage] = useState("1");
   return (
     <PageLayout>

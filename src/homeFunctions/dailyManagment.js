@@ -27,6 +27,7 @@ export default function DailyManagment(props) {
             key={activity.id}
             name={activity.name}
             description={activity.description}
+            icon={activity.icon}
             hour={
               activity.timeStart.Hour +
               " : " +
