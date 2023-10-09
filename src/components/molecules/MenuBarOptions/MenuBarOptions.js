@@ -24,13 +24,13 @@ export default function MenuBarOption(props) {
         setChange={props.changePage}
       />
       <MenuButtonIcon
-        text="Daily managment"
+        text="Add Activity"
         icon="TrendingUp"
         navigate="2"
         setChange={props.changePage}
       />
       <MenuButtonIcon
-        text="Reminders"
+        text="Daily Activities"
         icon="AssignmentInd"
         navigate="3"
         setChange={props.changePage}

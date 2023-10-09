@@ -1,5 +1,5 @@
 import * as styles from "./TimeSelect.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function TimeSelect(props) {
   const timeValHour = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -19,8 +19,11 @@ export default function TimeSelect(props) {
 
   const handleIndicator = (val) => {
     setIndicator(val);
-    props.setTime(Time);
   };
+
+  useEffect(() => {
+    props.setTime(Time);
+  }, [indicator]);
 
   const hour = timeValHour.map((hour, Index) => {
     const isActive = Index === stateHour ? styles.active : "";

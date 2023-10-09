@@ -25,6 +25,7 @@ export default function getDataUser(data) {
   };
   const addActivity = async () => {
     try {
+      console.log(data);
       const currentUser = getAuth().currentUser;
       const userRef = doc(database, "usuarios", currentUser.uid);
       const activitiesCollectionRef = collection(userRef, "activities");
